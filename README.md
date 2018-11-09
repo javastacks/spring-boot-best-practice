@@ -53,6 +53,8 @@ Spring Boot 最佳实践
 
 更多正在更新中……
 
+栈长博客：https://www.javastack.cn
+
 请扫描二维码关注栈长的微信公众号：Java技术栈（id: javastack），获取及时更新推送！
 
 ![](http://upload-images.jianshu.io/upload_images/5954965-b98e553af9442c61?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
