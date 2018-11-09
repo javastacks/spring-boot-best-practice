@@ -1,0 +1,40 @@
+spring:
+  profiles:
+    active: prod
+
+---
+spring:
+  profiles: dev
+
+server:
+  port: 8080
+
+---
+spring:
+  profiles: test
+
+server:
+  port: 8081
+
+---
+spring.profiles: prod
+spring.profiles.include:
+  - proddb
+  - prodmq
+
+server:
+  port: 8082
+
+---
+spring:
+  profiles: proddb
+
+db:
+  name: mysql
+
+---
+spring:
+  profiles: prodmq
+
+mq:
+  address: localhost
