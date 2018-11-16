@@ -18,6 +18,7 @@
         <module>spring-boot-profile</module>
         <module>spring-boot-auto-configure</module>
         <module>spring-boot-banner</module>
+        <module>spring-boot-test</module>
     </modules>
     <packaging>pom</packaging>
 
