@@ -8,6 +8,7 @@ Spring Boot 最佳实践
 - [spring-boot-auto-configure](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-auto-configure)：Spring Boot 自动配置示例
 - [spring-boot-banner](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-banner)：Spring Boot Banner 示例
 - [spring-boot-json](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-json)：Spring Boot 返回 JSON 示例
+- [spring-boot-test](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-xml)：Spring Boot 单元测试示例
 - [spring-boot-xml](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-xml)：Spring Boot 返回 XML 示例
 - [spring-boot-logging](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-logging)：Spring Boot 集成日志示例
 - [spring-boot-mail](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-mail)：Spring Boot 发邮件示例
