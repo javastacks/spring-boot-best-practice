@@ -29,6 +29,7 @@ Spring Boot 最佳实践
 - [Spring Boot 核心配置文件详解](https://mp.weixin.qq.com/s/BzXNfBzq-2TOCbiHG3xcsQ)
 - [Spring Boot 核心配置](https://mp.weixin.qq.com/s/H144Kq4-A2Jlz1ijcQJURA)
 - [Spring Boot 最核心的 3 个注解详解](https://mp.weixin.qq.com/s/kNvy_0jb4oJtYdaxryq5xg)
+- [Spring Boot 运行应用的 3 种方式](https://mp.weixin.qq.com/s/lZsQnvlR38TLuV--D3F7Ag)
 - [Spring Boot Starters启动器](https://mp.weixin.qq.com/s/9HJVGlplze5p0eBayvhFCA)
 - [Spring Boot Runner 启动器](https://mp.weixin.qq.com/s/WeO2kJLV6LKez56T5GG35Q)
 - [Spring Boot Profile 不同环境配置](https://mp.weixin.qq.com/s/K0kdQwoo2t5FDsTUJttSAA)
