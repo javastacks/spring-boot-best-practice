@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@192.168.11.151:1521/pdb_dev
+    username: develop
+    password: 0
+    druid:
+      one:
+        driver-class-name: oracle.jdbc.driver.OracleDriver
+        url: jdbc:oracle:thin:@192.168.11.151:1521/pdb_dev
+        username: develop
+        password: 0
+        initial-size: 10
+        max-active: 10
+        min-idle: 5
+        max-wait: 60000
+      two:
+        driver-class-name: oracle.jdbc.driver.OracleDriver
+        url: jdbc:oracle:thin:@192.168.11.151:1521/pdb_dev
+        username: develop
+        password: 0
+        initial-size: 10
+        max-active: 10
+        min-idle: 5
+        max-wait: 60000
+      web-stat-filter:
+        enabled: true
+        url-pattern: /
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: develop
+        login-password: 0

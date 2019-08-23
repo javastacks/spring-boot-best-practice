@@ -19,6 +19,9 @@
         <module>spring-boot-auto-configure</module>
         <module>spring-boot-banner</module>
         <module>spring-boot-test</module>
+        <module>spring-boot-druid</module>
+        <module>javastack-spring-boot-starter</module>
+        <module>javastack-spring-boot-starter-sample</module>
     </modules>
     <packaging>pom</packaging>
 
