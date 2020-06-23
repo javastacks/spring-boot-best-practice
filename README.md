@@ -1,6 +1,8 @@
 # spring-boot-best-practice
 
-Spring Boot 最佳实践
+Spring Boot 最佳实践。
+
+栈长博客：https://www.javastack.cn
 
 ## Spring Boot 示例代码
 
@@ -64,15 +66,16 @@ Spring Boot 最佳实践
 - [Spring Boot YML 掀翻 Properties](https://mp.weixin.qq.com/s/jCvtSI46tqYGipfldHcUvQ)
 - [Spring Boot 1.x 正式退役，2.x大步向前](https://mp.weixin.qq.com/s/EXPNMLpwMeDueCmfiHSSew)
 - [Spring Boot 2.x 新特性总结及迁移指南](https://mp.weixin.qq.com/s/-WWBvWpD0Prib02XoU1sjw)
+
+...
+
 ---
 
-更多正在更新中……
+以上仅为部分教程，太多了，这里不能全部展示，这里仅不定期更新维护示例代码。
 
-栈长博客：https://www.javastack.cn
+更多教程请在Java技术栈（id: javastack）公众号回复：boot，获取我整理的最全、最新的 Spring Boot 教程，微信公众号阅读更全、更及时！
 
-请扫描二维码关注栈长的微信公众号：Java技术栈（id: javastack），获取及时更新推送！
-
-![](http://qianniu.javastack.cn/18-11-16/79719805.jpg)
+![](http://img.javastack.cn/18-11-16/79719805.jpg)
 
 
 
