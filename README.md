@@ -1,26 +1,8 @@
 # spring-boot-best-practice
 
-Spring Boot 最佳实践。
+Spring Boot 最佳实践，更多正在更新中……
 
 栈长博客：https://www.javastack.cn
-
-## Spring Boot 示例代码
-
-- [spring-boot-quick-start](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-quick-start)：Spring Boot 快速开始示例
-- [spring-boot-auto-configure](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-auto-configure)：Spring Boot 自动配置示例
-- [spring-boot-banner](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-banner)：Spring Boot Banner 示例
-- [spring-boot-json](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-json)：Spring Boot 返回 JSON 示例
-- [spring-boot-xml](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-xml)：Spring Boot 返回 XML 示例
-- [spring-boot-logging](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-logging)：Spring Boot 集成日志示例
-- [spring-boot-mail](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-mail)：Spring Boot 发邮件示例
-- [spring-boot-profile](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-profile)：Spring Boot 不同环境配置示例
-- [spring-boot-random](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-random)：Spring Boot 配置随机数示例
-- [spring-boot-servlet](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-servlet)：Spring Boot 配置 Servlet 示例
-- [spring-boot-ssl](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-ssl)：Spring Boot 配置 SSL 示例
-- [spring-boot-test](https://github.com/javastacks/spring-boot-best-practice/tree/master/spring-boot-test)：Spring Boot 单元测试示例
-- [javastack-spring-boot-starter](https://github.com/javastacks/spring-boot-best-practice/tree/master/javastack-spring-boot-starter)：自定义 Spring Boot Starter
-- [javastack-spring-boot-starter-sample](https://github.com/javastacks/spring-boot-best-practice/tree/master/javastack-spring-boot-starter-sample)：自定义 Spring Boot Starter 使用实例
-- 更多正在更新中……
 
 ## Spring Boot 教程
 
@@ -68,8 +50,6 @@ Spring Boot 最佳实践。
 - [Spring Boot 2.x 新特性总结及迁移指南](https://mp.weixin.qq.com/s/-WWBvWpD0Prib02XoU1sjw)
 
 ...
-
----
 
 以上仅为部分教程，太多了，这里不能全部展示，这里仅不定期更新维护示例代码。
 
