@@ -1,0 +1,6 @@
+spring:
+  redis:
+    host: 192.168.10.38
+    port: 6379
+    password: redis@2019
+    database: 1
