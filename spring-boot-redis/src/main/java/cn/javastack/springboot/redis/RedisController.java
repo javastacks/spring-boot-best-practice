@@ -63,4 +63,10 @@ public class RedisController {
         return "OK";
     }
 
+    @GetMapping("/redis/sentinel/set")
+    public String sentinelSet(@RequestParam("name") String name) {
+        redisOptService.set("name", name, 60000);
+        return redisOptService.getStringValue("name");
+    }
+
 }

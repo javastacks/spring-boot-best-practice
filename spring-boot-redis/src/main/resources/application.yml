@@ -1,6 +1,24 @@
 spring:
+  profiles:
+    active: sentinel
+
+---
+spring:
+  profiles: standalone
   redis:
     host: 192.168.10.38
     port: 6379
     password: redis@2019
     database: 1
+
+---
+spring:
+  profiles: sentinel
+  redis:
+    password: redis
+    sentinel:
+      master: mymaster
+      nodes:
+        - 192.168.11.163:26379
+        - 192.168.11.164:26379
+        - 192.168.11.165:26379
