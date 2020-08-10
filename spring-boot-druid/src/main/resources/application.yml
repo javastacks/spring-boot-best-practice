@@ -1,24 +1,24 @@
 spring:
   datasource:
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@192.168.11.151:1521/pdb_dev
-    username: develop
-    password: 0
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/javastack
+    username: root
+    password: 123456
     druid:
       one:
-        driver-class-name: oracle.jdbc.driver.OracleDriver
-        url: jdbc:oracle:thin:@192.168.11.151:1521/pdb_dev
-        username: develop
-        password: 0
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/javastack
+        username: root
+        password: 123456
         initial-size: 10
         max-active: 10
         min-idle: 5
         max-wait: 60000
       two:
-        driver-class-name: oracle.jdbc.driver.OracleDriver
-        url: jdbc:oracle:thin:@192.168.11.151:1521/pdb_dev
-        username: develop
-        password: 0
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/javastack
+        username: root
+        password: 123456
         initial-size: 10
         max-active: 10
         min-idle: 5
@@ -29,5 +29,5 @@ spring:
       stat-view-servlet:
         enabled: true
         url-pattern: /druid/*
-        login-username: develop
-        login-password: 0
+        login-username: root
+        login-password: 123456
