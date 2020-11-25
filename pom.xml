@@ -27,6 +27,7 @@
         <module>spring-boot-undertow</module>
         <module>spring-boot-docker</module>
         <module>spring-boot-features</module>
+        <module>spring-boot-application</module>
     </modules>
     <packaging>pom</packaging>
 
