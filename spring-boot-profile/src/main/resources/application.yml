@@ -1,40 +1,49 @@
 spring:
   profiles:
-    active: prod
+    active:
+      - prodall
+    group:
+      prodall:
+        - prod
+        - prodmq
+        - proddb
 
 ---
-spring:
-  profiles: dev
+spring.config.activate.on-profile: dev
+
+env: dev
 
 server:
   port: 8080
 
 ---
-spring:
-  profiles: test
+spring.config.activate.on-profile: test
+
+env: test
 
 server:
   port: 8081
 
 ---
-spring.profiles: prod
-spring.profiles.include:
-  - proddb
-  - prodmq
+spring.config.activate.on-profile: prod
+
+env: prod
 
 server:
   port: 8082
 
 ---
-spring:
-  profiles: proddb
+spring.config.activate.on-profile: proddb
 
 db:
   name: mysql
 
+env: proddb
+
 ---
-spring:
-  profiles: prodmq
+spring.config.activate.on-profile: prodmq
 
 mq:
   address: localhost
+
+env: prodmq
