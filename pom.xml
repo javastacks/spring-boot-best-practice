@@ -28,6 +28,7 @@
         <module>spring-boot-docker</module>
         <module>spring-boot-features</module>
         <module>spring-boot-application</module>
+        <module>spring-boot-datasource</module>
     </modules>
     <packaging>pom</packaging>
 

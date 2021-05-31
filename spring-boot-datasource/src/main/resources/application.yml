@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/javastack
+    username: root
+    password: 12345678
+  sql.init:
+    schemaLocations:
+      - classpath:sql/create_t_javastack.sql
+    dataLocations:
+      - classpath:sql/insert_t_javastack.sql
