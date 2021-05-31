@@ -1,4 +1,4 @@
-package cn.javastack.springboot.banner;
+package cn.javastack.springboot.druid;
 
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import org.springframework.boot.Banner;
