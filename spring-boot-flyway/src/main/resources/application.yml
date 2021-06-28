@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/flyway
+    username: flyway
+    password: 12345678
+  flyway:
+    locations:
+      - classpath:flyway
+    table: t_flyway_history

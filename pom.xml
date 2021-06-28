@@ -29,6 +29,7 @@
         <module>spring-boot-features</module>
         <module>spring-boot-application</module>
         <module>spring-boot-datasource</module>
+        <module>spring-boot-flyway</module>
     </modules>
     <packaging>pom</packaging>
 
