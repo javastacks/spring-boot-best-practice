@@ -4,7 +4,6 @@ import cn.javastack.springboot.mapstruct.dto.UserShowDTO;
 import cn.javastack.springboot.mapstruct.entity.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
 
 import java.util.List;
 
@@ -15,13 +14,11 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface UserStructSpring {
 
-    @Mappings({
-            @Mapping(source = "birthday", target = "birthday", dateFormat = "yyyy-MM-dd"),
-            @Mapping(target = "regDate", expression = "java(org.apache.commons.lang3.time.DateFormatUtils.format(user.getRegDate(),\"yyyy-MM-dd HH:mm:ss\"))"),
-            @Mapping(source = "userExt.regSource", target = "registerSource"),
-            @Mapping(source = "userExt.favorite", target = "favorite"),
-            @Mapping(target = "memo", ignore = true)
-    })
+    @Mapping(source = "birthday", target = "birthday", dateFormat = "yyyy-MM-dd")
+    @Mapping(target = "regDate", expression = "java(org.apache.commons.lang3.time.DateFormatUtils.format(user.getRegDate(),\"yyyy-MM-dd HH:mm:ss\"))")
+    @Mapping(source = "userExt.regSource", target = "registerSource")
+    @Mapping(source = "userExt.favorite", target = "favorite")
+    @Mapping(target = "memo", ignore = true)
     UserShowDTO toUserShowDTO(User user);
 
     List<UserShowDTO> toUserShowDTOs(List<User> users);
