@@ -5,6 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.redis.core.*;
 import org.springframework.util.CollectionUtils;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -46,7 +47,7 @@ public class RedisOptService {
                 if (length == 1) {
                     return redisTemplate.delete(key[0]);
                 } else {
-                    return redisTemplate.delete(CollectionUtils.arrayToList(key)) == length;
+                    return redisTemplate.delete((Collection<String>) CollectionUtils.arrayToList(key)) == length;
                 }
             }
         }
