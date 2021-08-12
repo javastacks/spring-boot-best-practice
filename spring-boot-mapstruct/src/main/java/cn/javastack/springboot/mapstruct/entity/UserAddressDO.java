@@ -7,15 +7,15 @@ import lombok.Data;
  * @author 栈长
  */
 @Data
-public class UserExt {
+public class UserAddressDO {
 
-    private String regSource;
+    private String province;
 
-    private String favorite;
+    private String city;
 
-    private String school;
+    private String postcode;
 
-    private int kids;
+    private String address;
 
     private String memo;
 

@@ -9,7 +9,7 @@ import java.util.Date;
  * @author 栈长
  */
 @Data
-public class User {
+public class UserDO {
 
     private String name;
 
@@ -29,7 +29,7 @@ public class User {
 
     private String memo;
 
-    private UserExt userExt;
+    private UserExtDO userExtDO;
 
 
 }

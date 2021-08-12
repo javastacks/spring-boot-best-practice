@@ -7,7 +7,7 @@ import lombok.Data;
  * @author 栈长
  */
 @Data
-public class UserShowDTO {
+public class UserMultiDTO {
 
     private String name;
 
@@ -19,10 +19,10 @@ public class UserShowDTO {
 
     private String regDate;
 
-    private String registerSource;
-
-    private String favorite;
-
     private String memo;
+
+    private String postcode;
+
+    private String address;
 
 }
