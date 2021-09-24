@@ -1,0 +1,10 @@
+jasypt:
+  encryptor:
+    #password: G9w0BAQEFAASCBKYwggSiAgEAAoIBAQC
+    property:
+      prefix: "ENC@["
+      suffix: "]"
+
+javastack:
+  username: ENC@[K4DsOasic/5Cvu2Y6Ca5dyaw2+eejgqRfhDWB0itMWRONrIN+wLy3xkGbSfYxQ1b]
+  password: ENC@[UeZWoPt3ZhSs2wPUAKTF21dgnhzimB+FNNiQjpJoPEhwYzI5WH3IWboZ5Wn+5Rgf]

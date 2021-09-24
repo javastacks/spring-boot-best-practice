@@ -31,6 +31,7 @@
         <module>spring-boot-datasource</module>
         <module>spring-boot-flyway</module>
         <module>spring-boot-mapstruct</module>
+        <module>spring-boot-jasypt</module>
     </modules>
     <packaging>pom</packaging>
 
