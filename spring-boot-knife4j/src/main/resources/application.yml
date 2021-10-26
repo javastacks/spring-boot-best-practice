@@ -1,0 +1,8 @@
+knife4j:
+  # 开启增强
+  enable: true
+  # 开启登录认证
+  basic:
+    enable: true
+    username: test
+    password: test
