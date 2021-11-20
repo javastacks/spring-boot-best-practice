@@ -1,12 +1,7 @@
 package cn.javastack.springboot.features;
 
-import cn.javastack.springboot.features.analyzer.JavastackException;
-import cn.javastack.springboot.features.listener.JavastackListener;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,14 +11,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Application {
 
+    /**
+     * 作者：栈长
+     * 来源微信公众号：Java技术栈
+     */
     public static void main(String[] args) {
-        SpringApplication springApplication = new SpringApplication();
-        springApplication.addListeners(new JavastackListener());
-        springApplication.run(Application.class);
+        SpringApplication application = new SpringApplication(Application.class);
+
+        // 允许循环引用
+        application.setAllowCircularReferences(true);
+        application.run(args);
     }
 
 
     /**
+     * 作者：栈长
      * 来源微信公众号：Java技术栈
      */
 //    @Bean
