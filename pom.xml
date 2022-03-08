@@ -33,6 +33,7 @@
         <module>spring-boot-mapstruct</module>
         <module>spring-boot-jasypt</module>
         <module>spring-boot-knife4j</module>
+        <module>spring-boot-tinylog</module>
     </modules>
     <packaging>pom</packaging>
 
