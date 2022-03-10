@@ -34,6 +34,8 @@
         <module>spring-boot-jasypt</module>
         <module>spring-boot-knife4j</module>
         <module>spring-boot-tinylog</module>
+        <module>spring-boot-admin-server</module>
+        <module>spring-boot-admin-client</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -43,7 +45,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.0</version>
+        <version>2.6.4</version>
     </parent>
 
     <properties>
