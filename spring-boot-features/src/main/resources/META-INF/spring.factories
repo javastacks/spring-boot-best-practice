@@ -1,6 +1,3 @@
 org.springframework.boot.diagnostics.FailureAnalyzer=\
 cn.javastack.springboot.features.analyzer.PortInUseFailureAnalyzer,\
 cn.javastack.springboot.features.analyzer.JavastackFailureAnalyzer
-
-org.springframework.context.ApplicationListener=\
-cn.javastack.springboot.features.listener.JavastackListener

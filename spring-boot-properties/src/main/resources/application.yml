@@ -1,5 +1,68 @@
-tom:
+spring:
+  profiles:
+    default: dev
+    # 可以被命令行切换
+    active: dev, main
+    # 不会被切换
+    include:
+      - dev
+      - main
+    group:
+      main:
+        - main1
+        - main2
+  config:
+    import:
+      - optional:classpath:/config/app.yml
+
+javastack:
+  name: Java技术栈
+  site: www.javastack.cn
+  author: 栈长
+  users:
+    - Jom
+    - Lucy
+    - Jack
+  params:
+    tel: 18800008888
+    address: China
+  security:
+    # 生成随机 32 位 MD5 字符串
+    security-key: ${random.value}
+    security-code: ${random.uuid}
+
+member:
   name: Tom
-  sex: man
-  age: 18
-  entry-time: 2012-12-12 12:00:00
+  sex: 1
+  age: ${random.int[18,100]}
+  birthday: 2000-12-12 12:00:00
+
+---
+member:
+  name: Jack
+  sex: 1
+  age: 20
+  birthday: 2000-01-01 12:00:00
+
+spring:
+  config:
+    activate:
+      on-profile: "dev | test"
+
+---
+member:
+  name: Jack1
+
+spring:
+  config:
+    activate:
+      on-profile: main1
+
+---
+member:
+  name: Jack2
+
+spring:
+  config:
+    activate:
+      on-profile: main2

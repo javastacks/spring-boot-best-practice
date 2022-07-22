@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>test</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/test.css}"/>
+    <script th:src="@{/js/test.js}"></script>
+</head>
+<body>
+
+<a id="content" th:utext="${content}" class="red" onclick="changeColor()"></a>
+
+</body>
+</html>

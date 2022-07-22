@@ -8,16 +8,10 @@
     <version>1.0</version>
     <modules>
         <module>spring-boot-quick-start</module>
-        <module>spring-boot-random</module>
         <module>spring-boot-mail</module>
-        <module>spring-boot-json</module>
-        <module>spring-boot-xml</module>
+        <module>spring-boot-web</module>
         <module>spring-boot-ssl</module>
-        <module>spring-boot-servlet</module>
         <module>spring-boot-logging</module>
-        <module>spring-boot-profile</module>
-        <module>spring-boot-auto-configure</module>
-        <module>spring-boot-banner</module>
         <module>spring-boot-test</module>
         <module>spring-boot-druid</module>
         <module>javastack-spring-boot-starter</module>
@@ -37,6 +31,7 @@
         <module>spring-boot-admin-server</module>
         <module>spring-boot-admin-client</module>
         <module>spring-boot-schedule</module>
+        <module>spring-boot-native</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -46,14 +41,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.7</version>
+        <version>3.0.0-M3</version>
     </parent>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-    </properties>
 
     <dependencies>
 
@@ -89,7 +78,6 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.10</version>
         </dependency>
 
     </dependencies>
@@ -103,5 +91,17 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <url>https://repo.spring.io/milestone</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <url>https://repo.spring.io/milestone</url>
+        </pluginRepository>
+    </pluginRepositories>
 
 </project>
