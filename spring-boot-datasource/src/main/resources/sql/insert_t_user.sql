@@ -1,0 +1,7 @@
+BEGIN;
+INSERT INTO `t_user` VALUES (1, 'Lily', '18800000001', NOW(), 1);
+INSERT INTO `t_user` VALUES (2, 'Jod', '18800000002', NOW(), 1);
+INSERT INTO `t_user` VALUES (3, 'Jack', '18800000003', NOW(), 1);
+INSERT INTO `t_user` VALUES (4, 'Sherry', '18800000004', NOW(), 1);
+INSERT INTO `t_user` VALUES (5, 'James', '18800000005', NOW(), 1);
+COMMIT;

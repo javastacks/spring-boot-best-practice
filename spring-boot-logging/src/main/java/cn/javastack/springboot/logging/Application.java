@@ -12,6 +12,8 @@ import org.springframework.context.annotation.Bean;
 public class Application {
 
     public static void main(String[] args) {
+        System.setProperty("LOG_PATH", "./logs");
+        System.setProperty("LOGBACK_ROLLINGPOLICY_MAX_FILE_SIZE", "1KB");
         SpringApplication.run(Application.class);
     }
 
@@ -22,19 +24,16 @@ public class Application {
     private static final org.slf4j.Logger logger2 = org.slf4j.LoggerFactory
             .getLogger(Application.class);
 
-    private static final java.util.logging.Logger logger3 = java.util.logging.Logger
-            .getLogger("Application");
-
     @Bean
-    public CommandLineRunner loggerLineRunner() {
+    public CommandLineRunner commandLineRunner() {
         return (args) -> {
             logger1.error("commons logging error...");
             logger1.info("commons logging info...");
             logger1.debug("commons logging debug...");
 
+            logger2.error("slf4j error...");
             logger2.info("slf4j info...");
-
-            logger2.info("java util logging info...");
+            logger2.debug("slf4j debug...");
         };
     }
 

@@ -10,10 +10,8 @@
         <module>spring-boot-quick-start</module>
         <module>spring-boot-mail</module>
         <module>spring-boot-web</module>
-        <module>spring-boot-ssl</module>
         <module>spring-boot-logging</module>
         <module>spring-boot-test</module>
-        <module>spring-boot-druid</module>
         <module>javastack-spring-boot-starter</module>
         <module>javastack-spring-boot-starter-sample</module>
         <module>spring-boot-properties</module>
@@ -23,6 +21,7 @@
         <module>spring-boot-features</module>
         <module>spring-boot-application</module>
         <module>spring-boot-datasource</module>
+        <module>spring-boot-jpa</module>
         <module>spring-boot-flyway</module>
         <module>spring-boot-mapstruct</module>
         <module>spring-boot-jasypt</module>
@@ -41,7 +40,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.0-M3</version>
+        <version>3.0.0-M4</version>
     </parent>
 
     <dependencies>

@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: dev
+logging:
+#  level:
+#    root: INFO
+#    org.springframework: WARN
+#  file:
+#    name: ./logs/javastack.log
+#  logback:
+#    rollingpolicy:
+#      max-file-size: 100MB
+

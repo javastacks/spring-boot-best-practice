@@ -3,24 +3,26 @@ package cn.javastack.springboot.web.controller;
 import cn.javastack.springboot.web.bean.OrderInfo;
 import cn.javastack.springboot.web.bean.User;
 import cn.javastack.springboot.web.bean.UserXml;
+import jakarta.validation.constraints.Size;
+import org.apache.commons.lang3.RandomUtils;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @RestController
+@Validated
 public class ResponseBodyController {
 
     @CrossOrigin
     @GetMapping(value = "/user/json/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity getJsonUserInfo(@PathVariable("userId") String userId) {
+    public ResponseEntity getJsonUserInfo(@PathVariable("userId") @Size(min = 5, max = 8) String userId) {
         User user = new User("Java技术栈", 18);
         user.setId(Long.valueOf(userId));
         return new ResponseEntity(user, HttpStatus.OK);
@@ -41,6 +43,12 @@ public class ResponseBodyController {
         orderList.add(orderInfo3);
         user.setOrderList(orderList);
 
+        return new ResponseEntity(user, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/user/save")
+    public ResponseEntity saveUser(@RequestBody @Validated User user) {
+        user.setId(RandomUtils.nextLong());
         return new ResponseEntity(user, HttpStatus.OK);
     }
 

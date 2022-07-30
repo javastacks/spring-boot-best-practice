@@ -1,2 +1,7 @@
 server:
-  port: 8080
+  port: 8443
+  ssl:
+    protocol: TLS
+    key-store-type: JKS
+    key-store: classpath:.keystore
+    key-store-password: javastack
