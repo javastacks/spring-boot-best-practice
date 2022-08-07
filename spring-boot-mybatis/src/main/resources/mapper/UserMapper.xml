@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javastack.springboot.mybatis.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="UserDO">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="phone" column="phone" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,username,phone,create_time,status
+    </sql>
+
+    <select id="findById" parameterType="long" resultMap="BaseResultMap">
+        select
+            <include refid="Base_Column_List" />
+        from t_user
+        where id = #{id}
+    </select>
+
+
+</mapper>

@@ -1,7 +1,7 @@
-package cn.javastack.springboot.jpa.controller;
+package cn.javastack.springboot.mybatis.controller;
 
-import cn.javastack.springboot.jpa.entity.UserDO;
-import cn.javastack.springboot.jpa.repo.UserRepository;
+import cn.javastack.springboot.mybatis.entity.UserDO;
+import cn.javastack.springboot.mybatis.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-    private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
     @GetMapping("/user/info/{id}")
-    public UserDO getUserInfo(@PathVariable("id") long id){
-        UserDO userDO = userRepository.findById(id).orElseGet(null);
+    public UserDO getUserInfo(@PathVariable("id") long id) {
+        UserDO userDO = userMapper.findById(id);
         return userDO;
     }
 
