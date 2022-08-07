@@ -1,19 +1,22 @@
 spring:
   profiles:
-    active: sentinel
-
+    active: standalone
 ---
 spring:
-  profiles: standalone
+  config:
+    activate:
+      on-profile: standalone
   redis:
-    host: 192.168.10.38
+    host: localhost
     port: 6379
-    password: redis@2019
-    database: 1
+    password: 12345678
+    database: 0
 
 ---
 spring:
-  profiles: sentinel
+  config:
+    activate:
+      on-profile: sentinel
   redis:
     password: redis
     sentinel:

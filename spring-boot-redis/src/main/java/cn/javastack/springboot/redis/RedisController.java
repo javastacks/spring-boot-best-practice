@@ -3,9 +3,15 @@ package cn.javastack.springboot.redis;
 import cn.javastack.springboot.redis.pojo.User;
 import cn.javastack.springboot.redis.service.RedisLockService;
 import cn.javastack.springboot.redis.service.RedisOptService;
+import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.time.DateFormatUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,11 +25,22 @@ import java.util.*;
 @RestController
 public class RedisController {
 
+    private final StringRedisTemplate stringRedisTemplate;
+
+    @Resource(name = "stringRedisTemplate")
+    private ValueOperations<String, String> valueOperations;
+
     private final RedisOptService redisOptService;
     private final RedisLockService redisLockService;
 
     @GetMapping("/redis/set")
-    public String set(@RequestParam("name") String name) {
+    public String set(@RequestParam("name") String name, @RequestParam("value") String value) {
+        valueOperations.set(name, value);
+        return valueOperations.get(name);
+    }
+
+    @GetMapping("/redis/setObject")
+    public String setObject(@RequestParam("name") String name) {
         User user = new User();
         user.setId(RandomUtils.nextInt());
         user.setName(name);
