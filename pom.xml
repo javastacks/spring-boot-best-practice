@@ -22,6 +22,8 @@
         <module>spring-boot-application</module>
         <module>spring-boot-datasource</module>
         <module>spring-boot-jpa</module>
+        <module>spring-boot-mybatis</module>
+        <module>spring-boot-mybatis-plus</module>
         <module>spring-boot-flyway</module>
         <module>spring-boot-mapstruct</module>
         <module>spring-boot-jasypt</module>
@@ -31,11 +33,12 @@
         <module>spring-boot-admin-client</module>
         <module>spring-boot-schedule</module>
         <module>spring-boot-native</module>
+        <module>spring-boot-war</module>
     </modules>
     <packaging>pom</packaging>
 
     <name>spring-boot-best-practice</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Spring Boot Best Practice</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -86,6 +89,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier>
+                    <executable>true</executable>
+                </configuration>
             </plugin>
         </plugins>
     </build>
