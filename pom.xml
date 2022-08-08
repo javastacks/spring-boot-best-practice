@@ -3,6 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.0-M4</version>
+    </parent>
+
     <groupId>cn.javastack</groupId>
     <artifactId>spring-boot-best-practice</artifactId>
     <version>1.0</version>
@@ -39,12 +45,6 @@
 
     <name>spring-boot-best-practice</name>
     <description>Spring Boot Best Practice</description>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.0-M4</version>
-    </parent>
 
     <dependencies>
 
@@ -89,10 +89,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <classifier>exec</classifier>
-                    <executable>true</executable>
-                </configuration>
             </plugin>
         </plugins>
     </build>
