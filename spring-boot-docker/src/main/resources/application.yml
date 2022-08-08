@@ -1,0 +1,2 @@
+server:
+  port: 8082 # 8080 for all, 8081 for layer, 8082 for Cloud Native Buildpacks

@@ -14,25 +14,22 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>1.4.13</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>default</id>
                         <goals>
-                            <goal>build</goal>
-                            <goal>push</goal>
+                            <goal>build-image</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <repository>javastack/${project.name}</repository>
-                    <tag>${project.version}</tag>
-                    <buildArgs>
-                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
-                    </buildArgs>
-                    <dockerfile>src/main/docker/Dockerfile</dockerfile>
+                    <!-- 分层镜像不兼容可直接执行的包 -->
+                    <executable>false</executable>
+                    <image>
+                        <name>javastack/docker-cnb:${project.version}</name>
+                        <pullPolicy>IF_NOT_PRESENT</pullPolicy>
+                    </image>
                 </configuration>
             </plugin>
         </plugins>
