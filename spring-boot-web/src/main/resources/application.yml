@@ -5,3 +5,9 @@ server:
     key-store-type: JKS
     key-store: classpath:.keystore
     key-store-password: javastack
+
+spring:
+  security:
+    user:
+      name: root
+      password: root
