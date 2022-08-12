@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: health,info
+    web:
+      discovery:
+        enabled: true
+      base-path: /actuator
+      path-mapping:
+        health: health
+      exposure:
+        include: "*"
+        exclude: threaddump
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "GET,POST"

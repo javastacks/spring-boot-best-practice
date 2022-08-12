@@ -40,6 +40,7 @@
         <module>spring-boot-schedule</module>
         <module>spring-boot-native</module>
         <module>spring-boot-war</module>
+		<module>spring-boot-actuator</module>
     </modules>
     <packaging>pom</packaging>
 
