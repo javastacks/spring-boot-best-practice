@@ -1,7 +1,14 @@
+spring:
+  application:
+    name: spring-boot-actuator
+
 server:
   port: 8080
 
 management:
+#  server:
+#    port: 8088
+#    address: 127.0.0.1
   endpoints:
     jmx:
       exposure:
@@ -18,3 +25,11 @@ management:
       cors:
         allowed-origins: "*"
         allowed-methods: "GET,POST"
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  prometheus:
+    metrics:
+      export:
+        pushgateway:
+          enabled: true

@@ -11,6 +11,11 @@
 
     <artifactId>spring-boot-actuator</artifactId>
 
+    <properties>
+        <micrometer-registry-prometheus.version>1.9.3</micrometer-registry-prometheus.version>
+        <simpleclient_pushgateway.version>0.16.0</simpleclient_pushgateway.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -21,6 +26,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <version>${micrometer-registry-prometheus.version}</version>
+        </dependency>
+
     </dependencies>
+
 
 </project>
