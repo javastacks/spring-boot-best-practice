@@ -1,8 +1,8 @@
 package cn.javastack.springboot.schedule;
 
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.scheduling.support.CronTrigger;
 import org.springframework.scheduling.support.ScheduledMethodRunnable;
@@ -15,10 +15,10 @@ import org.springframework.util.ReflectionUtils;
  */
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class AutoStopTask {
 
-    @Autowired
-    private CustomTaskScheduler customTaskScheduler;
+    private final CustomTaskScheduler customTaskScheduler;
 
     private int count;
 

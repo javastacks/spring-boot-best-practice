@@ -6,7 +6,8 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.scheduling.support.ScheduledMethodRunnable;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.concurrent.ScheduledFuture;
@@ -29,14 +30,14 @@ class CustomTaskScheduler extends ThreadPoolTaskScheduler {
     }
 
     @Override
-    public ScheduledFuture<?> scheduleAtFixedRate(Runnable task, long period) {
+    public ScheduledFuture<?> scheduleAtFixedRate(Runnable task, Duration period) {
         ScheduledFuture<?> future = super.scheduleAtFixedRate(task, period);
         this.putScheduledTasks(task, future);
         return future;
     }
 
     @Override
-    public ScheduledFuture<?> scheduleAtFixedRate(Runnable task, Date startTime, long period) {
+    public ScheduledFuture<?> scheduleAtFixedRate(Runnable task, Instant startTime, Duration period) {
         ScheduledFuture<?> future = super.scheduleAtFixedRate(task, startTime, period);
         this.putScheduledTasks(task, future);
         return future;
