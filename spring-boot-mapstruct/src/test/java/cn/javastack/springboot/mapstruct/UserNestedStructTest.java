@@ -5,19 +5,17 @@ import cn.javastack.springboot.mapstruct.entity.UserAddressDO;
 import cn.javastack.springboot.mapstruct.entity.UserExtDO;
 import cn.javastack.springboot.mapstruct.entity.UserNestedDO;
 import cn.javastack.springboot.mapstruct.struct.UserNestedStruct;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
 
 /**
  * 微信公众号：Java技术栈
+ *
  * @author 栈长
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class UserNestedStructTest {
 

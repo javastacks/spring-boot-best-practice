@@ -4,12 +4,10 @@ import cn.javastack.springboot.mapstruct.dto.UserShowDTO;
 import cn.javastack.springboot.mapstruct.entity.UserDO;
 import cn.javastack.springboot.mapstruct.entity.UserExtDO;
 import cn.javastack.springboot.mapstruct.struct.UserSpringStruct;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,9 +15,9 @@ import java.util.List;
 
 /**
  * 微信公众号：Java技术栈
+ *
  * @author 栈长
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class UserSpringStructTest {
 
@@ -27,6 +25,7 @@ public class UserSpringStructTest {
     private UserSpringStruct userSpringStruct;
 
     @Test
+
     public void test1() {
         UserExtDO userExtDO = new UserExtDO();
         userExtDO.setRegSource("公众号：Java技术栈");
