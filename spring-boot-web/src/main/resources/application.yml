@@ -11,3 +11,8 @@ spring:
     user:
       name: root
       password: root
+#  可添加到全局配置文件中
+#  devtools:
+#    restart:
+#      log-condition-evaluation-delta: false
+#      trigger-file: ".reloadtrigger"
