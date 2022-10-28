@@ -1,0 +1,18 @@
+spring:
+  mail:
+    host: smtp.exmail.qq.com
+    username: xxx@xxx.com
+    password: xxx
+    properties:
+      "[mail.smtp.socketFactory.class]": javax.net.ssl.SSLSocketFactory
+      "[mail.smtp.socketFactory.fallback]": false
+      "[mail.smtp.socketFactory.port]": 465
+      "[mail.smtp.connectiontimeout]": 5000
+      "[mail.smtp.timeout]": 3000
+      "[mail.smtp.writetimeout]": 5000
+
+mail:
+  from: xxx@xxx.com
+  personal: 栈长
+  bcc: xxx@xxx.com
+  subject: Spring Boot 发邮件测试主题
