@@ -15,10 +15,11 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.authorizeRequests()
-                .antMatchers("/").permitAll()
-                .antMatchers("/test/**").hasRole("TEST")
-                .and().logout().logoutSuccessUrl("/")
+        return http.authorizeHttpRequests((authorize) -> {
+                    authorize.requestMatchers("/").permitAll()
+                            .requestMatchers("/test/**").hasRole("TEST");
+                })
+                .logout().logoutSuccessUrl("/")
                 .and().formLogin(withDefaults())
                 .build();
     }

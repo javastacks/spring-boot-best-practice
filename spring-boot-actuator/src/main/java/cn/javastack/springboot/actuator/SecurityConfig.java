@@ -17,15 +17,15 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @Configuration
 public class SecurityConfig {
 
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.authorizeRequests()
-                .antMatchers("/").permitAll()
-                .requestMatchers(EndpointRequest.to("health")).hasRole("ENDPOINT_ADMIN")
-                .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
-//                .and().csrf(csrf -> csrf.disable())
-                .and().csrf(csrf -> csrf.ignoringRequestMatchers(EndpointRequest.toAnyEndpoint()))
+        return http.authorizeHttpRequests((authorize) -> {
+                    authorize.requestMatchers("/").permitAll()
+                            .requestMatchers(EndpointRequest.to("health")).hasRole("ENDPOINT_ADMIN")
+                            .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll();
+                })
+                //                .csrf(csrf -> csrf.disable())
+                .csrf(csrf -> csrf.ignoringRequestMatchers(EndpointRequest.toAnyEndpoint()))
                 .formLogin(withDefaults())
                 .logout().logoutSuccessUrl("/")
                 .and().build();
