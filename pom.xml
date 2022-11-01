@@ -28,6 +28,8 @@
         <module>spring-boot-application</module>
         <module>spring-boot-datasource</module>
         <module>spring-boot-jpa</module>
+        <module>spring-boot-rabbitmq</module>
+        <module>spring-boot-cache</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-mybatis-plus</module>
         <module>spring-boot-flyway</module>
@@ -42,7 +44,6 @@
         <module>spring-boot-native</module>
         <module>spring-boot-war</module>
 		<module>spring-boot-actuator</module>
-        <module>spring-boot-rabbitmq</module>
     </modules>
     <packaging>pom</packaging>
 

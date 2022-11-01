@@ -1,0 +1,6 @@
+spring:
+  cache:
+    type: redis
+    cache-names: "calc,test"
+    redis:
+      time-to-live: "10s"
