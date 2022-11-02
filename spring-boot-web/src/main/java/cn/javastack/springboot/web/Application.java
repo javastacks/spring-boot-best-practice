@@ -30,5 +30,10 @@ public class Application {
         return "test";
     }
 
+    @GetMapping(value = "/index")
+    public String index() {
+        return "index";
+    }
+
 
 }
