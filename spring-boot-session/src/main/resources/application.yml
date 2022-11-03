@@ -1,0 +1,6 @@
+spring:
+  session:
+    timeout: 30m
+  redis:
+    host: localhost
+    port: 6379
