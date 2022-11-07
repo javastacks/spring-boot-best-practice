@@ -22,6 +22,7 @@
         <module>javastack-spring-boot-starter-sample</module>
         <module>spring-boot-properties</module>
         <module>spring-boot-redis</module>
+        <module>spring-boot-mongodb</module>
         <module>spring-boot-session</module>
         <module>spring-boot-undertow</module>
         <module>spring-boot-docker</module>
