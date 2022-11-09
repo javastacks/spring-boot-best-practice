@@ -1,2 +1,28 @@
 server:
   port: 8080
+
+spring:
+  mail:
+    host: smtp.exmail.qq.com
+    username: xxx@xxx.com
+    password: xxx
+    properties:
+      "[mail.smtp.socketFactory.class]": javax.net.ssl.SSLSocketFactory
+      "[mail.smtp.socketFactory.fallback]": false
+      "[mail.smtp.socketFactory.port]": 465
+      "[mail.smtp.connectiontimeout]": 5000
+      "[mail.smtp.timeout]": 3000
+      "[mail.smtp.writetimeout]": 5000
+  boot:
+    admin:
+      notify:
+        mail:
+          enabled: true
+          from: Spring Boot Admin <xxx@xxx.com>
+          to: xxx@xxx.com # 多个以,分隔
+          cc: xxx@xxx.com # 多个以,分隔
+        dingtalk:
+          enabled: true
+          webhook-url: https://oapi.dingtalk.com/robot/send?access_token=xxx
+          secret: xxx
+          message: "警报：应用 #{instance.registration.name} - #{instance.id} 掉线了！！！"

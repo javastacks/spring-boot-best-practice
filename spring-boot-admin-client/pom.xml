@@ -2,19 +2,26 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--    <parent>-->
+<!--        <artifactId>spring-boot-best-practice</artifactId>-->
+<!--        <groupId>cn.javastack</groupId>-->
+<!--        <version>1.0</version>-->
+<!--    </parent>-->
+
+    <!-- 暂时不兼容 Spring Boot 3.0 -->
     <parent>
-        <artifactId>spring-boot-best-practice</artifactId>
-        <groupId>cn.javastack</groupId>
-        <version>1.0</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.0</version>
+        <relativePath />
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-boot-admin-client</artifactId>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <spring-boot-admin-starter-client.version>2.6.2</spring-boot-admin-starter-client.version>
+        <spring-boot-admin-starter-client.version>2.7.3</spring-boot-admin-starter-client.version>
     </properties>
 
 
@@ -31,6 +38,15 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
