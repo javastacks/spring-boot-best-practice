@@ -6,12 +6,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.0-RC1</version>
+        <version>3.0.0-RC2</version>
     </parent>
 
     <groupId>cn.javastack</groupId>
     <artifactId>spring-boot-best-practice</artifactId>
     <version>1.0</version>
+
     <modules>
         <module>spring-boot-quick-start</module>
         <module>spring-boot-mail</module>
@@ -31,7 +32,9 @@
         <module>spring-boot-application</module>
         <module>spring-boot-datasource</module>
         <module>spring-boot-jpa</module>
+		<module>spring-boot-activemq</module>
         <module>spring-boot-rabbitmq</module>
+		<module>spring-boot-kafka</module>
         <module>spring-boot-cache</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-mybatis-plus</module>

@@ -1,0 +1,15 @@
+spring:
+  jms:
+    cache:
+      enabled: true # 默认 true
+      session-cache-size: 5 # 默认 1
+  artemis:
+    mode: native
+    broker-url: tcp://localhost:61616
+    user: admin
+    password: 123456
+    pool:
+      enabled: true # 默认 false
+      max-connections: 50 # 默认 1
+      idle-timeout: 5s # 默认 30s
+      max-sessions-per-connection: 100 # 默认 500
