@@ -2,6 +2,9 @@ javastack:
   starter:
     enabled: true
 
+debug: true
+
+
 spring:
   autoconfigure:
     exclude:
