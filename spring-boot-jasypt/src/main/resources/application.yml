@@ -1,10 +1,10 @@
 jasypt:
   encryptor:
-    #password: G9w0BAQEFAASCBKYwggSiAgEAAoIBAQC
+    password: G9w0BAQEFAASCBKYwggSiAgEAAoIBAQC
     property:
       prefix: "ENC@["
       suffix: "]"
 
 javastack:
-  username: ENC@[K4DsOasic/5Cvu2Y6Ca5dyaw2+eejgqRfhDWB0itMWRONrIN+wLy3xkGbSfYxQ1b]
-  password: ENC@[UeZWoPt3ZhSs2wPUAKTF21dgnhzimB+FNNiQjpJoPEhwYzI5WH3IWboZ5Wn+5Rgf]
+  username: ENC@[VA058GV86AaUx4wSoCKekKrDJv6tP4eTwWkoCGHnt6Tb3F7ETJnKAs3QiRkZFD5k]
+  password: ENC@[7Y7FVXO5qS4lAx3o5B4atyHW8kGUv0o6903xL2ofTOicdcJw71/m+UeFUVfX0VPM]
