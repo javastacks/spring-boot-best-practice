@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.0-RC2</version>
+        <version>3.0.0</version>
     </parent>
 
     <groupId>cn.javastack</groupId>
@@ -48,6 +48,7 @@
         <module>spring-boot-schedule</module>
         <module>spring-boot-quartz</module>
         <module>spring-boot-native</module>
+        <module>spring-boot-graalvm</module>
         <module>spring-boot-war</module>
 		<module>spring-boot-actuator</module>
     </modules>
