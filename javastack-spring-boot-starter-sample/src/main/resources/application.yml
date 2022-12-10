@@ -4,7 +4,6 @@ javastack:
 
 debug: true
 
-
 spring:
   autoconfigure:
     exclude:
