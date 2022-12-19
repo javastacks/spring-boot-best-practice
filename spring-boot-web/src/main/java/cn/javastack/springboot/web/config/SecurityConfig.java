@@ -16,8 +16,8 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.authorizeHttpRequests((authorize) -> {
-                    authorize.requestMatchers("/**").permitAll()
-                            .requestMatchers("/test/**").hasRole("TEST");
+                    authorize.requestMatchers("/test/**").hasRole("TEST")
+                            .requestMatchers("/**").permitAll();
                 })
                 .logout().logoutSuccessUrl("/")
                 .and().formLogin(withDefaults())
@@ -25,7 +25,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    protected UserDetailsService userDetailsService() {
+    public UserDetailsService userDetailsService() {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
         manager.createUser(User.withUsername("test").password("{noop}test")
                 .roles("ADMIN", "TEST").build());
