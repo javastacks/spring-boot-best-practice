@@ -6,6 +6,10 @@ import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 开启 SSL 时同时支持 HTTP
+ * 微信公众号：Java技术栈
+ */
 @Configuration
 public class ServerConfig {
 

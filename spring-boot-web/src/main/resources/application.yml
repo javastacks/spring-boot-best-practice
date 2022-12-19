@@ -1,5 +1,7 @@
 server:
   port: 8443
+  servlet:
+    context-path: /
   ssl:
     protocol: TLS
     key-store-type: JKS
@@ -14,6 +16,8 @@ spring:
     user:
       name: root
       password: root
+  mvc:
+    static-path-pattern: "/**" # 默认 /**
 #  可添加到全局配置文件中
 #  devtools:
 #    restart:
