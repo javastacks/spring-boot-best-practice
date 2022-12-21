@@ -23,7 +23,7 @@ public class User {
     private Long id;
 
     @NotNull
-    @JsonProperty(value = "user-name", required = true)
+    @JsonProperty(value = "username", required = true)
     @Size(min = 5, max = 10)
     private String userName;
 

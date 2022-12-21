@@ -9,12 +9,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import jakarta.servlet.ServletRegistration;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -23,6 +25,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+import java.time.Duration;
 import java.util.Locale;
 
 @Slf4j
@@ -31,6 +34,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     /**
      * Locale 默认设置为英文
+     *
      * @return
      */
     @Bean
@@ -47,6 +51,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     /**
      * 切换语言拦截器，通过 url?lang=zh_CN 形式进行切换
+     *
      * @return
      */
     private LocaleChangeInterceptor localeChangeInterceptor() {
@@ -106,6 +111,15 @@ public class WebConfig implements WebMvcConfigurer {
             initServlet.setInitParameter("name", "initServlet");
             initServlet.setInitParameter("sex", "man");
         };
+    }
+
+    @Bean
+    public RestTemplate defaultRestTemplate(RestTemplateBuilder restTemplateBuilder) {
+        return restTemplateBuilder
+                .setConnectTimeout(Duration.ofSeconds(5))
+                .setReadTimeout(Duration.ofSeconds(5))
+                .basicAuthentication("test", "test")
+                .build();
     }
 
 }

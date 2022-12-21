@@ -16,20 +16,24 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Rest Controller
+ * 微信公众号：Java技术栈
+ */
 @RestController
 @Validated
 public class ResponseBodyController {
 
     @CrossOrigin
     @GetMapping(value = "/user/json/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity getJsonUserInfo(@PathVariable("userId") @Size(min = 5, max = 8) String userId) {
+    public User getJsonUserInfo(@PathVariable("userId") @Size(min = 5, max = 8) String userId) {
         User user = new User("Java技术栈", 18);
         user.setId(Long.valueOf(userId));
-        return new ResponseEntity(user, HttpStatus.OK);
+        return user;
     }
 
     @GetMapping(value = "/user/xml/{userId}", produces = MediaType.APPLICATION_XML_VALUE)
-    public ResponseEntity getXmlUserInfo(@PathVariable("userId") String userId) {
+    public UserXml getXmlUserInfo(@PathVariable("userId") String userId) {
         UserXml user = new UserXml();
         user.setName("栈长");
         user.setId(userId);
@@ -43,7 +47,7 @@ public class ResponseBodyController {
         orderList.add(orderInfo3);
         user.setOrderList(orderList);
 
-        return new ResponseEntity(user, HttpStatus.OK);
+        return user;
     }
 
     @PostMapping(value = "/user/save")
