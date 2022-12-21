@@ -7,6 +7,9 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 
+/**
+ * 微信公众号：Java技术栈
+ */
 public class StringWithoutSpaceDeserializer extends StdDeserializer<String> {
 
     private static final long serialVersionUID = -6972065572263950443L;

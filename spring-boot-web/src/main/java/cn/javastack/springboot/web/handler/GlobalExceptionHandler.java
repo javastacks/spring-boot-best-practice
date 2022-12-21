@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+/**
+ * 微信公众号：Java技术栈
+ */
 @ControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
