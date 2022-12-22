@@ -4,8 +4,8 @@ import cn.javastack.springboot.web.bean.OrderInfo;
 import cn.javastack.springboot.web.bean.User;
 import cn.javastack.springboot.web.bean.UserXml;
 import jakarta.validation.constraints.Size;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
-import org.hibernate.validator.constraints.Length;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +20,7 @@ import java.util.List;
  * Rest Controller
  * 微信公众号：Java技术栈
  */
+@Slf4j
 @RestController
 @Validated
 public class ResponseBodyController {
@@ -29,6 +30,7 @@ public class ResponseBodyController {
     public User getJsonUserInfo(@PathVariable("userId") @Size(min = 5, max = 8) String userId) {
         User user = new User("Java技术栈", 18);
         user.setId(Long.valueOf(userId));
+        log.info("user info: {}", user);
         return user;
     }
 

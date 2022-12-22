@@ -17,6 +17,7 @@
         <module>spring-boot-quick-start</module>
         <module>spring-boot-mail</module>
         <module>spring-boot-web</module>
+        <module>spring-boot-webflux</module>
         <module>spring-boot-logging</module>
         <module>spring-boot-test</module>
         <module>javastack-spring-boot-starter</module>
@@ -52,8 +53,8 @@
         <module>spring-boot-war</module>
 		<module>spring-boot-actuator</module>
     </modules>
-    <packaging>pom</packaging>
 
+    <packaging>pom</packaging>
     <name>spring-boot-best-practice</name>
     <description>Spring Boot Best Practice</description>
 
