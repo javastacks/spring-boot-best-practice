@@ -1,6 +1,9 @@
 spring:
   profiles:
     active: dev
+  output:
+    ansi:
+      enabled: always
 logging:
 #  level:
 #    root: INFO
@@ -10,4 +13,4 @@ logging:
 #  logback:
 #    rollingpolicy:
 #      max-file-size: 100MB
-
+  register-shutdown-hook: true

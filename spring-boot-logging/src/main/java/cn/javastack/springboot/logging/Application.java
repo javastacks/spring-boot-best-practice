@@ -28,10 +28,12 @@ public class Application {
     public CommandLineRunner commandLineRunner() {
         return (args) -> {
             logger1.error("commons logging error...");
+            logger1.warn("commons logging warn");
             logger1.info("commons logging info...");
             logger1.debug("commons logging debug...");
 
             logger2.error("slf4j error...");
+            logger2.warn("commons logging warn");
             logger2.info("slf4j info...");
             logger2.debug("slf4j debug...");
         };
