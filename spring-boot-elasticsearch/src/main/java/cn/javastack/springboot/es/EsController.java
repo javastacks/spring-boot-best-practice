@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EsController {
 
-    public static final String INDEX_JAVASTACK = "javastack1";
+    public static final String INDEX_JAVASTACK = "javastack";
     private final ElasticsearchTemplate elasticsearchTemplate;
 
     private final UserRepository userRepository;
