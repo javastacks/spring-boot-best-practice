@@ -23,7 +23,7 @@ public class MetricsConfig {
     }
 
     private Number date() {
-        return 2022.01;
+        return 2023.01;
     }
 
 }

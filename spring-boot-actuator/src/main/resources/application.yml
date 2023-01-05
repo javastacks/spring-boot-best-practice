@@ -5,6 +5,10 @@ spring:
 server:
   port: 8080
 
+logging:
+  pattern:
+    level: ${spring.application.name:},%X{traceId:-},%X{spanId:-}
+
 management:
 #  server:
 #    port: 8088
@@ -28,6 +32,9 @@ management:
   metrics:
     tags:
       application: ${spring.application.name}
+  tracing:
+    sampling:
+      probability: 1.0
   prometheus:
     metrics:
       export:
