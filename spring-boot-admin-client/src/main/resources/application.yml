@@ -5,7 +5,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:8080
+        url: http://localhost:8088
 management:
   endpoints:
     web:
