@@ -3,24 +3,17 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.0</version>
-        <relativePath />
+        <artifactId>spring-boot-best-practice</artifactId>
+        <groupId>cn.javastack</groupId>
+        <version>1.0</version>
     </parent>
-
-<!--    <parent>-->
-<!--        <artifactId>spring-boot-best-practice</artifactId>-->
-<!--        <groupId>cn.javastack</groupId>-->
-<!--        <version>1.0</version>-->
-<!--    </parent>-->
 
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-boot-jasypt</artifactId>
 
     <properties>
-        <jasypt-spring-boot.version>3.0.4</jasypt-spring-boot.version>
+        <jasypt-spring-boot.version>3.0.5</jasypt-spring-boot.version>
     </properties>
 
     <dependencies>
@@ -31,16 +24,8 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 
