@@ -52,6 +52,7 @@
         <module>spring-boot-graalvm</module>
         <module>spring-boot-war</module>
 		<module>spring-boot-actuator</module>
+        <module>spring-boot-aop</module>
     </modules>
 
     <packaging>pom</packaging>
