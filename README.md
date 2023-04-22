@@ -1,4 +1,4 @@
-# spring-boot-best-practice
+# Spring Boot 最佳实践
 
 > :rocket: 本仓库提供了 Spring Boot 主流知识点实战示例，大家可以随意下载学习。
 >
@@ -20,7 +20,9 @@ R哥最初接触和学习 Spring Boot 框架是在 2016 年，工作之余，茶
 
 自 2016 起，R哥有幸负责和参与公司的多个系统重构，这其中就包括由 SSM 框架更新到以 Spring Boot 框架为基础的转型，也包括以 Spring Cloud 框架为基础的微服务系统的设计和研发，Spring Cloud 框架的基础就是基于 Spring Boot 框架构建。
 
-在多年的实际开发和架构工作中，R哥积累了大量的 Spring Boot 框架使用经验，见证了 Spring Boot 1.x ~ 3.x 的发展历史，也写了大量的 Spring Boot 免费教程：
+在多年的实际开发和架构工作中，R哥积累了大量的 Spring Boot 框架使用经验，见证了 Spring Boot 1.x ~ 3.x 的发展历史，也写了大量的 Spring Boot 免费教程。
+
+> :bell: **以下教程陆陆续续写了好几年，部分内容可能过时，仅供大家参考学习:exclamation:**
 
 - [什么是 Spring Boot?](https://mp.weixin.qq.com/s/jWLcPxTg9bH3D9_7qbYbfw)
 - [Spring Boot 开启的 2 种方式](https://mp.weixin.qq.com/s/PYM_iV-u3dPMpP3MNz7Hig)
@@ -70,13 +72,15 @@ R哥博客同步更新：https://www.javastack.cn
 
 更多教程请在Java技术栈（id: javastack）公众号回复：boot，获取我整理的最全、最新的 Spring Boot 教程，微信公众号阅读更全、更及时！
 
-![](http://img.javastack.cn/18-11-16/79719805.jpg)
+++++
 
-> :bell: **以上教程陆陆续续写了好几年，部分内容可能过时，仅供大家参考学习:exclamation:**
+<p align="center">
+  <img src="http://img.javastack.cn/18-11-16/79719805.jpg">
+</p>
+
+++++
 
 ## :tada: Spring Boot 3 最新书籍
-
-> 书名：Spring Boot 3 核心技术与最佳实践
 
 ### 写作背景
 
@@ -126,4 +130,10 @@ Spring Boot 至今已经发展了近十年，最新的版本也已经发布到�
 
 ![](http://img.javastack.cn/20230422102612.jpg)
 
-![](http://img.javastack.cn/20230422104440.png)
+++++
+
+<p align="center">
+  <img src="http://img.javastack.cn/20230422104440.png">
+</p>
+
+++++
