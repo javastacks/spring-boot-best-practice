@@ -1,6 +1,6 @@
 > 现在书中不允许放外链，所以统一在这里提供，链接 n 对应的是书中的标注序号。
 >
-> 如果购买最新的《Spring Boot 3 核心技术与最佳实践》书籍，请[点击这里](https://github.com/javastacks/spring-boot-best-practice#Spring-Boot-最新书籍)前往项目首页。
+> 最新的《Spring Boot 3 核心技术与最佳实践》书籍，请[点击这里](https://github.com/javastacks/spring-boot-best-practice#tada-spring-boot-3-最新书籍)前往购买。
 
 链接1：
 
