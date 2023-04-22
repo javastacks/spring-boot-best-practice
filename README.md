@@ -75,6 +75,7 @@ R哥博客同步更新：https://www.javastack.cn
 <p align="center">
   <img src="http://img.javastack.cn/18-11-16/79719805.jpg">
 </p>
+
 ## :tada: Spring Boot 3 最新书籍
 
 ![](http://img.javastack.cn/20230422150251.png)
