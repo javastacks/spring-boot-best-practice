@@ -13,7 +13,7 @@
     <artifactId>spring-boot-admin-client</artifactId>
 
     <properties>
-        <spring-boot-admin-starter-client.version>3.0.0-M8</spring-boot-admin-starter-client.version>
+        <spring-boot-admin-starter-client.version>3.0.2</spring-boot-admin-starter-client.version>
     </properties>
 
 
