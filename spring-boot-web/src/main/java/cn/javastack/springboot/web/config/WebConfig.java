@@ -100,6 +100,7 @@ public class WebConfig implements WebMvcConfigurer {
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new RegisterServlet(), "/registerServlet");
         servletRegistrationBean.addInitParameter("name", "registerServlet");
         servletRegistrationBean.addInitParameter("sex", "man");
+        servletRegistrationBean.setIgnoreRegistrationFailure(true);
         return servletRegistrationBean;
     }
 
