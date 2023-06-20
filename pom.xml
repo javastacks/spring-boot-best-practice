@@ -48,7 +48,6 @@
         <module>spring-boot-admin-client</module>
         <module>spring-boot-schedule</module>
         <module>spring-boot-quartz</module>
-        <module>spring-boot-native</module>
         <module>spring-boot-graalvm</module>
         <module>spring-boot-war</module>
 		<module>spring-boot-actuator</module>
