@@ -14,68 +14,56 @@ Spring 作为 Java 开发界的万能框架，曾经和 Struts2、Hibernate 框�
 
 Spring Boot 代表了企业的真实需求，它表现在 Java 工程师、架构师的**求职面试技能清单上，Spring Boot 几乎是必备技能。** 所以，要成为合格的 Java 程序员，要学习 Spring 全家桶，Spring Boot 则是必经之路。
 
-## :tada: Spring Boot 核心技术课
+## :heart: Spring Boot 学习资料
 
-R哥最初接触和学习 Spring Boot 框架是在 2016 年，工作之余，茶余饭后经常会和同事们聊聊最新的 Java 技术，Spring Boot 框架就是其中之一，那时候虽然应用还不是很广泛，但却很火热，然后它就逐渐成为了炙手可热的 Java 框架。
+这里分享一份 **Spring Boot 学习资料**，包括 Spring Boot 底层实现原理及代码实战，非常齐全，助你快速打通 Spring Boot 的各个环节。
 
-自 2016 起，R哥有幸负责和参与公司的多个系统重构，这其中就包括由 SSM 框架更新到以 Spring Boot 框架为基础的转型，也包括以 Spring Cloud 框架为基础的微服务系统的设计和研发，Spring Cloud 框架的基础就是基于 Spring Boot 框架构建。
+**详细目录如下：**
 
-在多年的实际开发和架构工作中，R哥积累了大量的 Spring Boot 框架使用经验，见证了 Spring Boot 1.x ~ 3.x 的发展历史，也写了大量的 Spring Boot 免费教程。
+- Spring Boot Hello World
+- Spring Boot 返回 JSON 数据
+- Spring Boot 使用其他 JSON 转换框架
+- Spring Boot 全局异常捕捉
+- Spring Boot JPA 连接数据库
+- Spring Boot 配置 JPA
+- Spring Boot 整合 JPA 保存数据
+- Spring Boot 使用 JdbcTemplate 保存数据
+- Spring Boot 常用配置
+- Spring Boot 静态资源处理
+- Spring boot 实现任务调度 
+- Spring Boot 普通类调用 Bean
+- Spring Boot 使用模板引擎
+- Spring Boot 集成 JSP
+- Spring Boot 集成 Servlet
+- Spring Boot 集成 Fliter 和 Listener
+- Spring Boot 拦截器 HandlerInterceptor
+- Spring Boot 系统启动任务 CommandLineRunner
+- Spring Boot 集成 JUnit 单元测试
+- Spring Boot 读取系统环境变量
+- Spring Boot 使用自定义 properties
+- Spring Boot 改变默认包扫描
+- Spring Boot 自定义启动 Banner
+- Spring Boot 导入 Spring XML 配置文件
+- Spring Boot 热部署
+- Spring Boot 监控和管理生产环境
+- Spring Boot Starter 详解
+- Spring Boot 依赖的版本
+- Spring Boot 文件上传
+- Spring Boot 集成 Redis 缓存
+- Spring Boot 之 Spring Cache
+- Spring Boot 集成 Ehcache
+- Spring Boot 分布式 Session 共享
+- ......
 
-市面上很多书籍、博客都是基于 Spring Boot 低版本的应用，即使有最新的 Spring Boot 技术，也都是四处零乱，并没有对最新的技术要点进行系统地梳理、解读及应用，如果还继续学习低版本的应用，就会给很多初学者带来没有必要的知识更新的成本，也会走很多弯路。
+**共 108 页！非常齐全！**
 
-鉴于市面上关于 Spring Boot 3.x 的系统性学习资料比较匮乏，R哥的《**Spring Boot 核心技术课**》终于准备一切妥当，可直接购买学习全部内容。
+**获取方式如下：**
 
-**有需要的扫码联系报名：**
-
-![399 元永久学习，美滋滋～](http://img.javastack.cn/20230523114601.png)
-
-原价 **~~999~~** 元，现在只要 **399** 元即可上车，这个价格绝对是史无所有的价格，后续也绝对不会再低的价格。
-
-### 课程形式
-
-恕我直言，**视频学习的方式效率太低了**，一般都要下载到本地才能学习，或者绑定一台电脑，还不能多端学习，学习体验无疑太差，更是影响了学习效率。
-
-另外，**我敢说市面上的学习视频大部分都都过时了**，大家都知道，**现在技术更新太快了**，可能没等视频录制完，技术都更新几轮了，学习成本大大增加。
-
-> 所以，本课程采用的是**图文形式**，用图片和文字把核心要点写清楚，写的全是**细节、干货、精华。**
-
-课程可**永久在线学习**，支持**电脑、手机**等多端学习，**不限制**设备数，支持**暗黑**模式，就算是在路上，或者晚上，都能利用碎片时间学习，并且**一次订阅，永久免费提供更新**。
-
-### 课程大纲
-
-Spring Boot 核心技术课，我目前把它分为了 16 个模块：
-
-![点击放大查看高清版](http://img.javastack.cn/20230523114619.png)
-
-> **课程非常全面，几乎覆盖了 Spring Boot 所有核心知识点，已全部完结，可随时报名学习全部内容。**
-
-看完大纲就知道有多值了，不要乱学老旧的 Spring Boot 技术了，浪费时间，和R哥学习最新的 Spring Boot 技术，少走弯路。
-
-**早订阅、早学习，学完直接把 Spring Boot 技术写到简历里，面试跳槽谈薪水时会更有底气。**
-
-### 订阅课程
-
-目前课程首发享特价 **399** 元，一次订阅，永久学习，永久免费更新，即后续出的更新版都免费提供。
-
-课程还要不断更新，还要不断付出更多时间精力，后续会逐渐恢复原价 **999** 元，现在订阅是最划算的，后续不会比这个更便宜。
-
-> 觉得贵的，可以去外面随便看看一个课程，**都是好几千、上万的**，而且都是单次购买，不会提供长期免费更新。
->
-> **R哥省去了推广运营的成本**，几百块就能搞定 Spring Boot 核心技术，而且还提供永久免费更新，这就是R哥课程的优势。
-
-**学完直接、大胆把 Spring Boot 写在简历里，提升简历竞争力，让你面试加分、跳槽涨薪。提升自己，搞定面试和涨薪才是最重要的。**
-
-> 课程是虚拟物品，一旦订阅激活，就能获取课程全部内容，所以本课程**不退款、不议价、不扯皮，想清楚了再来报名**，报名即表示自动签订本条款！
-
-**特惠价 399 元扫码购买学习：**
-
-![后续不会比这个特惠价更低！](http://img.javastack.cn/20230523114601.png)
-
-## :heart: Spring Boot 最新动态
-
-关注微信公众号：**Java技术栈**，获取最新 Spring Boot 教程及最新更新动态。
+这份教程免费分享给大家，微信扫码关注 **Java技术栈** 公众号：
 
 <p align="center">
   <img src="http://img.javastack.cn/18-11-16/79719805.jpg">
 </p>
+
+关注后，在公众号后台发送关键字：**666**，公众号会自助推送给你。
+
