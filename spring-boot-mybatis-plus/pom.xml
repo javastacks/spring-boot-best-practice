@@ -13,7 +13,8 @@
     <artifactId>spring-boot-mybatis-plus</artifactId>
 
     <properties>
-        <mybatis-plus-boot-starter.version>3.5.3.1</mybatis-plus-boot-starter.version>
+        <mybatis-plus-boot-starter.version>3.5.4.1</mybatis-plus-boot-starter.version>
+        <mybatis-spring.version>3.0.3</mybatis-spring.version>
     </properties>
 
     <dependencies>
@@ -21,6 +22,13 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus-boot-starter.version}</version>
+        </dependency>
+
+        <!-- 解决 Spring Boot 3.2.0 升级 mybatis-plus 暂未做适配的问题，后续兼容后移除 -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis-spring.version}</version>
         </dependency>
         <dependency>
             <groupId>com.mysql</groupId>

@@ -14,7 +14,7 @@
     <version>1.0</version>
 
     <properties>
-        <mybatis-spring-boot-starter.version>3.0.1</mybatis-spring-boot-starter.version>
+        <mybatis-spring-boot-starter.version>3.0.3</mybatis-spring-boot-starter.version>
     </properties>
 
     <dependencies>

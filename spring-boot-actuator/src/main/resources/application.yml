@@ -29,8 +29,8 @@ management:
       cors:
         allowed-origins: "*"
         allowed-methods: "GET,POST"
-  metrics:
-    tags:
+  observations:
+    key-values:
       application: ${spring.application.name}
   tracing:
     sampling:
