@@ -9,6 +9,7 @@ spring:
   data:
     redis:
       host: localhost
+      password: 123456
       port: 6379
       database: 0
 
@@ -17,11 +18,12 @@ spring:
   config:
     activate:
       on-profile: sentinel
-  redis:
-    password: redis
-    sentinel:
-      master: mymaster
-      nodes:
-        - 192.168.11.163:26379
-        - 192.168.11.164:26379
-        - 192.168.11.165:26379
+  data:
+    redis:
+      password: 123456
+      sentinel:
+        master: mymaster
+        nodes:
+          - 192.168.11.163:26379
+          - 192.168.11.164:26379
+          - 192.168.11.165:26379
