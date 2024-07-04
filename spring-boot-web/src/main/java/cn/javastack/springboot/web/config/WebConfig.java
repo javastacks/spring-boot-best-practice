@@ -9,13 +9,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import jakarta.servlet.ServletRegistration;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.web.client.ClientHttpRequestFactories;
+import org.springframework.boot.web.client.ClientHttpRequestFactorySettings;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -34,7 +38,6 @@ public class WebConfig implements WebMvcConfigurer {
 
     /**
      * Locale 默认设置为英文
-     *
      * @return
      */
     @Bean
@@ -51,7 +54,6 @@ public class WebConfig implements WebMvcConfigurer {
 
     /**
      * 切换语言拦截器，通过 url?lang=zh_CN 形式进行切换
-     *
      * @return
      */
     private LocaleChangeInterceptor localeChangeInterceptor() {
@@ -120,6 +122,19 @@ public class WebConfig implements WebMvcConfigurer {
                 .setConnectTimeout(Duration.ofSeconds(5))
                 .setReadTimeout(Duration.ofSeconds(5))
                 .basicAuthentication("test", "test")
+                .build();
+    }
+
+    @Bean
+    public RestClient defaultRestClient(RestClient.Builder restClientBuilder) {
+        ClientHttpRequestFactorySettings settings = ClientHttpRequestFactorySettings.DEFAULTS
+                .withConnectTimeout(Duration.ofSeconds(3))
+                .withReadTimeout(Duration.ofSeconds(3));
+        ClientHttpRequestFactory requestFactory = ClientHttpRequestFactories.get(settings);
+        return restClientBuilder
+                .baseUrl("http://localhost:8080")
+                .defaultHeader("Authorization", "Bearer test")
+                .requestFactory(requestFactory)
                 .build();
     }
 
