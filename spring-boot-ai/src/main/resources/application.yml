@@ -1,5 +1,8 @@
 server:
   port: 8080
+logging:
+  level:
+    cn.javastack.springboot.ai: DEBUG
 spring:
   ai:
     openai:
@@ -9,3 +12,9 @@ spring:
         options:
           model: deepseek-chat
           temperature: 0.5
+    mcp:
+      client:
+        stdio:
+          servers-configuration: classpath:mcp-servers-config.json
+        toolcallback:
+          enabled: true
