@@ -5,12 +5,33 @@ spring:
     ansi:
       enabled: always
 logging:
-#  level:
-#    root: INFO
-#    org.springframework: WARN
-#  file:
-#    name: ./logs/javastack.log
-#  logback:
-#    rollingpolicy:
-#      max-file-size: 100MB
+  #  level:
+  #    root: INFO
+  #    org.springframework: WARN
+  #  file:
+  #    name: ./logs/javastack.log
+  #  logback:
+  #    rollingpolicy:
+  #      max-file-size: 100MB
+  structured:
+    format:
+      console: cn.javastack.springboot.logging.SimpleStructuredLogFormat # ecs
+      file: cn.javastack.springboot.logging.SimpleStructuredLogFormat # ecs
+    json:
+      exclude:
+        - process
+        - service
+      rename:
+        log.logger: class
+        message: msg
+      add:
+        encrypt: false
+#      stacktrace:
+#        root: first
+#        max-length: 1024
+#        include-common-frames: true
+#        include-hashes: true
+  charset:
+    console: UTF-8
+    file: UTF-8
   register-shutdown-hook: true

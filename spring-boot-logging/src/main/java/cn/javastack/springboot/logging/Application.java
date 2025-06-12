@@ -36,6 +36,9 @@ public class Application {
             logger2.warn("commons logging warn");
             logger2.info("slf4j info...");
             logger2.debug("slf4j debug...");
+
+            logger2.info("CONSOLE_LOG_STRUCTURED_FORMAT:{}", System.getProperty("CONSOLE_LOG_STRUCTURED_FORMAT"));
+            logger2.info("CONSOLE_LOG_CHARSET:{}", System.getProperty("CONSOLE_LOG_CHARSET"));
         };
     }
 
