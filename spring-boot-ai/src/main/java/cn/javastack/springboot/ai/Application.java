@@ -13,7 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Application {
 
-    @Value("${spring.ai.openai.api-key}")
+    @Value("${spring.ai.deepseek.api-key}")
     private String apiKey;
 
     public static void main(String[] args) {

@@ -5,8 +5,8 @@ logging:
     cn.javastack.springboot.ai: DEBUG
 spring:
   ai:
-    openai:
-      api-key: "sk-xxxxxx" # 安全起见，从系统环境变量读取
+    deepseek:
+      api-key: ${DEEPSEEK_API_KEY} # 安全起见，从系统环境变量读取
       base-url: https://api.deepseek.com
       chat:
         options:

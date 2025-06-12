@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.Prompt;
-import org.springframework.ai.openai.OpenAiChatModel;
+import org.springframework.ai.deepseek.DeepSeekChatModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +19,7 @@ import reactor.core.publisher.Flux;
 @RequiredArgsConstructor
 public class ChatController {
 
-    private final OpenAiChatModel chatModel;
+    private final DeepSeekChatModel chatModel;
 
     /**
      * 聊天接口
@@ -28,7 +28,7 @@ public class ChatController {
      */
     @GetMapping("/ds/chat")
     public String generate(@RequestParam(value = "message", defaultValue = "hello") String message) {
-        return this.chatModel.call(message);
+        return chatModel.call(message);
     }
 
     /**
