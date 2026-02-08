@@ -1,5 +1,8 @@
 # spring-boot-best-practice
 
+[To view in English (点击查看英文)](./README_en.md)
+
+
 > :rocket: 本仓库提供了 Spring Boot 主流知识点实战示例，大家可以随意下载学习。
 >
 > :star: 本项目会长期更新，为避免迷路，请点击右上角 **Star** 关注本项目。
