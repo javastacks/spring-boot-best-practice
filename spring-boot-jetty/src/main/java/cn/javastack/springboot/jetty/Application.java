@@ -1,4 +1,4 @@
-package cn.javastack.springboot.undertow;
+package cn.javastack.springboot.jetty;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,9 +16,9 @@ public class Application {
         SpringApplication.run(Application.class);
     }
 
-    @GetMapping(value = "/undertow/test")
-    public String undertow() {
-        return "hello undertow";
+    @GetMapping(value = "/jetty/test")
+    public String jetty() {
+        return "hello jetty (undertow removed in spring boot 4)";
     }
 
 

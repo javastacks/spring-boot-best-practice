@@ -1,6 +1,6 @@
 package cn.javastack.springboot.actuator;
 
-import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
+import org.springframework.boot.security.autoconfigure.actuate.web.servlet.EndpointRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -27,8 +27,8 @@ public class SecurityConfig {
                 //                .csrf(csrf -> csrf.disable())
                 .csrf(csrf -> csrf.ignoringRequestMatchers(EndpointRequest.toAnyEndpoint()))
                 .formLogin(withDefaults())
-                .logout().logoutSuccessUrl("/")
-                .and().build();
+                .logout((logout) -> logout.logoutSuccessUrl("/"))
+                .build();
     }
 
     @Bean

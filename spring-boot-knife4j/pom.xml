@@ -12,16 +12,14 @@
     <artifactId>spring-boot-knife4j</artifactId>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <knife4j-spring-boot-starter.version>2.0.9</knife4j-spring-boot-starter.version>
+        <knife4j-openapi3-jakarta-spring-boot-starter.version>4.5.0</knife4j-openapi3-jakarta-spring-boot-starter.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-spring-boot-starter</artifactId>
-            <version>${knife4j-spring-boot-starter.version}</version>
+            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+            <version>${knife4j-openapi3-jakarta-spring-boot-starter.version}</version>
         </dependency>
     </dependencies>
 

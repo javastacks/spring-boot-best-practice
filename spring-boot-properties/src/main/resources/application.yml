@@ -21,7 +21,7 @@ spring:
 javastack:
   name: Java技术栈
   site: www.javastack.cn
-  author: 栈长
+  author: R哥
   users:
     - Jom
     - Lucy

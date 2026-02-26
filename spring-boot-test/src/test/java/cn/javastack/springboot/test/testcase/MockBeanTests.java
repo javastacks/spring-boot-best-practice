@@ -4,7 +4,7 @@ import cn.javastack.springboot.test.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -17,7 +17,7 @@ class MockBeanTests {
 //    @Autowired
 //    private UserService userService;
 
-    @MockBean
+    @MockitoBean
     private UserService userService;
 
     @Test
@@ -27,4 +27,3 @@ class MockBeanTests {
     }
 
 }
-

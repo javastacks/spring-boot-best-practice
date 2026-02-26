@@ -37,7 +37,7 @@ public class ResponseBodyController {
     @GetMapping(value = "/user/xml/{userId}", produces = MediaType.APPLICATION_XML_VALUE)
     public UserXml getXmlUserInfo(@PathVariable("userId") String userId) {
         UserXml user = new UserXml();
-        user.setName("栈长");
+        user.setName("R哥");
         user.setId(userId);
 
         List<OrderInfo> orderList = new ArrayList<>();

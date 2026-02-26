@@ -12,9 +12,7 @@
     <artifactId>spring-boot-datasource</artifactId>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <druid-spring-boot-starter.version>1.2.11</druid-spring-boot-starter.version>
+        <druid.version>1.2.27</druid.version>
     </properties>
 
     <dependencies>
@@ -28,8 +26,8 @@
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>${druid-spring-boot-starter.version}</version>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
         </dependency>
     </dependencies>
 

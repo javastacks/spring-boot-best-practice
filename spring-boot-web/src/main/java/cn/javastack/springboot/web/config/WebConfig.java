@@ -1,24 +1,21 @@
 package cn.javastack.springboot.web.config;
 
 import cn.javastack.springboot.web.handler.CustomConverter;
+import cn.javastack.springboot.web.handler.CustomRestTemplateCustomizer;
 import cn.javastack.springboot.web.handler.StringWithoutSpaceDeserializer;
 import cn.javastack.springboot.web.servlet.InitServlet;
 import cn.javastack.springboot.web.servlet.RegisterServlet;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 import jakarta.servlet.ServletRegistration;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.web.client.ClientHttpRequestFactories;
-import org.springframework.boot.web.client.ClientHttpRequestFactorySettings;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
-import org.springframework.http.client.ClientHttpRequestFactory;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.http.client.support.BasicAuthenticationInterceptor;
+import org.springframework.http.converter.json.JacksonJsonHttpMessageConverter;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.LocaleResolver;
@@ -28,13 +25,19 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+import tools.jackson.databind.DeserializationFeature;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.module.SimpleModule;
 
 import java.time.Duration;
 import java.util.Locale;
 
 @Slf4j
+@RequiredArgsConstructor
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+
+    private final CustomRestTemplateCustomizer customRestTemplateCustomizer;
 
     /**
      * Locale 默认设置为英文
@@ -74,17 +77,15 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {
-        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-
+    public JacksonJsonHttpMessageConverter jacksonJsonHttpMessageConverter() {
         SimpleModule module = new SimpleModule();
         module.addDeserializer(String.class, new StringWithoutSpaceDeserializer(String.class));
-        mapper.registerModule(module);
 
-        converter.setObjectMapper(mapper);
-        return converter;
+        JsonMapper mapper = JsonMapper.builder()
+                .addModule(module)
+                .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+                .build();
+        return new JacksonJsonHttpMessageConverter(mapper);
     }
 
     @Override
@@ -117,20 +118,21 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public RestTemplate defaultRestTemplate(RestTemplateBuilder restTemplateBuilder) {
-        return restTemplateBuilder
-                .setConnectTimeout(Duration.ofSeconds(5))
-                .setReadTimeout(Duration.ofSeconds(5))
-                .basicAuthentication("test", "test")
-                .build();
+    public RestTemplate defaultRestTemplate() {
+        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+        requestFactory.setConnectTimeout(Duration.ofSeconds(5));
+        requestFactory.setReadTimeout(Duration.ofSeconds(5));
+
+        RestTemplate restTemplate = new RestTemplate(requestFactory);
+        restTemplate.getInterceptors().add(new BasicAuthenticationInterceptor("test", "test"));
+        return restTemplate;
     }
 
     @Bean
     public RestClient defaultRestClient(RestClient.Builder restClientBuilder) {
-        ClientHttpRequestFactorySettings settings = ClientHttpRequestFactorySettings.DEFAULTS
-                .withConnectTimeout(Duration.ofSeconds(3))
-                .withReadTimeout(Duration.ofSeconds(3));
-        ClientHttpRequestFactory requestFactory = ClientHttpRequestFactories.get(settings);
+        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+        requestFactory.setConnectTimeout(Duration.ofSeconds(3));
+        requestFactory.setReadTimeout(Duration.ofSeconds(3));
         return restClientBuilder
                 .baseUrl("http://localhost:8080")
                 .defaultHeader("Authorization", "Bearer test")

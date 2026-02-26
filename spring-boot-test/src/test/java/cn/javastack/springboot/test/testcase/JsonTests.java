@@ -31,7 +31,7 @@ class JsonTests {
 
     @Test
     void deserialize() throws Exception {
-        String content = "{\"id\":10002, \"name\":\"Petty\", \"birthday\": \"2021-01-21T02:32:00\"}";
+        String content = "{\"id\":10002, \"name\":\"Petty\", \"birthday\": \"2021-01-21 02:32:00\"}";
         assertThat(this.json.parse(content))
                 .isEqualTo(new User(10002L, "Petty",
                         LocalDateTime.of(2021, 1, 21, 2, 32, 0)));
@@ -39,4 +39,3 @@ class JsonTests {
     }
 
 }
-

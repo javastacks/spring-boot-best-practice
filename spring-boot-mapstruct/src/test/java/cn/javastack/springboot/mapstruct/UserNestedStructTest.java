@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  * 微信公众号：Java技术栈
  *
- * @author 栈长
+ * @author R哥
  */
 @SpringBootTest
 public class UserNestedStructTest {
@@ -39,7 +39,7 @@ public class UserNestedStructTest {
         userAddressDO.setMemo("地址信息");
 
         UserNestedDO userNestedDO = new UserNestedDO();
-        userNestedDO.setName("栈长嵌套映射");
+        userNestedDO.setName("R哥嵌套映射");
         userNestedDO.setSex(1);
         userNestedDO.setAge(18);
         userNestedDO.setBirthday(new Date());

@@ -19,8 +19,8 @@ public class SecurityConfig {
                     authorize.requestMatchers("/test/**").hasRole("TEST")
                             .requestMatchers("/**").permitAll();
                 })
-                .logout().logoutSuccessUrl("/")
-                .and().formLogin(withDefaults())
+                .logout((logout) -> logout.logoutSuccessUrl("/"))
+                .formLogin(withDefaults())
                 .build();
     }
 

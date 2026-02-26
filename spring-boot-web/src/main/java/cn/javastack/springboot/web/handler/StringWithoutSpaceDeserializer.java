@@ -1,11 +1,9 @@
 package cn.javastack.springboot.web.handler;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import org.apache.commons.lang3.StringUtils;
-
-import java.io.IOException;
+import tools.jackson.core.JsonParser;
+import tools.jackson.databind.DeserializationContext;
+import tools.jackson.databind.deser.std.StdDeserializer;
 
 /**
  * 微信公众号：Java技术栈
@@ -19,7 +17,7 @@ public class StringWithoutSpaceDeserializer extends StdDeserializer<String> {
     }
 
     @Override
-    public String deserialize(JsonParser p, DeserializationContext deserializationContext) throws IOException {
+    public String deserialize(JsonParser p, DeserializationContext deserializationContext) {
         return StringUtils.trimToEmpty(p.getText());
     }
 

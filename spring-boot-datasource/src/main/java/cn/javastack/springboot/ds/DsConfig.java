@@ -1,6 +1,7 @@
 package cn.javastack.springboot.ds;
 
-import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
+import com.alibaba.druid.pool.DruidDataSource;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,16 +16,16 @@ import javax.sql.DataSource;
 public class DsConfig {
 
     @Primary
-    @Bean
-    @ConfigurationProperties("spring.datasource.druid.one")
+    @Bean(destroyMethod = "close")
+    @ConfigurationProperties("spring.druid.one")
     public DataSource dataSource1() {
-        return DruidDataSourceBuilder.create().build();
+        return DataSourceBuilder.create().type(DruidDataSource.class).build();
     }
 
-    @Bean
-    @ConfigurationProperties("spring.datasource.druid.two")
+    @Bean(destroyMethod = "close")
+    @ConfigurationProperties("spring.druid.two")
     public DataSource dataSource2() {
-        return DruidDataSourceBuilder.create().build();
+        return DataSourceBuilder.create().type(DruidDataSource.class).build();
     }
 
 }

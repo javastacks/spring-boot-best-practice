@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * 作者：栈长
+ * 作者：R哥
  * 来源微信公众号：Java技术栈
  */
 @EnableAdminServer

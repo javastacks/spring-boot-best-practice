@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * 微信公众号：Java技术栈
  *
- * @author 栈长
+ * @author R哥
  */
 @SpringBootTest
 public class UserSpringStructTest {
@@ -33,7 +33,7 @@ public class UserSpringStructTest {
         userExtDO.setSchool("社会大学");
 
         UserDO userDO = new UserDO();
-        userDO.setName("栈长Spring");
+        userDO.setName("R哥Spring");
         userDO.setSex(1);
         userDO.setAge(18);
         userDO.setBirthday(new Date());
@@ -50,7 +50,7 @@ public class UserSpringStructTest {
         List<UserDO> userDOs = new ArrayList<>();
         UserDO userDO2 = new UserDO();
         BeanUtils.copyProperties(userDO, userDO2);
-        userDO2.setName("栈长Spring2");
+        userDO2.setName("R哥Spring2");
         userDOs.add(userDO);
         userDOs.add(userDO2);
         List<UserShowDTO> userShowDTOs = userSpringStruct.toUserShowDTOs(userDOs);

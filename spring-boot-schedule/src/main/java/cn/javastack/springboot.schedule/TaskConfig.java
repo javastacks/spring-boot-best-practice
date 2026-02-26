@@ -20,7 +20,7 @@ public class TaskConfig {
     public ThreadPoolTaskExecutor taskExecutor1(TaskExecutionProperties taskExecutionProperties) {
         ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
 
-        PropertyMapper map = PropertyMapper.get().alwaysApplyingWhenNonNull();
+        PropertyMapper map = PropertyMapper.get();
         TaskExecutionProperties.Pool pool = taskExecutionProperties.getPool();
         map.from(pool::getQueueCapacity).to(taskExecutor::setQueueCapacity);
         map.from(pool::getCoreSize).to(taskExecutor::setCorePoolSize);
@@ -40,7 +40,7 @@ public class TaskConfig {
     public ThreadPoolTaskExecutor taskExecutor2(TaskExecutionProperties taskExecutionProperties) {
         ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
 
-        PropertyMapper map = PropertyMapper.get().alwaysApplyingWhenNonNull();
+        PropertyMapper map = PropertyMapper.get();
         TaskExecutionProperties.Pool pool = taskExecutionProperties.getPool();
         map.from(10).to(taskExecutor::setQueueCapacity);
         map.from(3).to(taskExecutor::setCorePoolSize);

@@ -23,7 +23,7 @@ public class CallRestController {
     private final WebClient webClient;
 
     @GetMapping("/webClient/{uid}")
-    public Mono<User> webClient(@PathVariable("uid") String uid) {
+    public Mono<User> webClient(@PathVariable String uid) {
         return this.webClient.get().uri(GET_USERINFO_URL, uid)
                 .retrieve().bodyToMono(User.class);
     }

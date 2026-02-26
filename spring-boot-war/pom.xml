@@ -13,11 +13,9 @@
     <packaging>war</packaging>
 
     <dependencies>
-        <!-- 打 war 包后不携带嵌入式 Tomcat 容器 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
+            <artifactId>spring-boot-starter-tomcat-runtime</artifactId>
         </dependency>
     </dependencies>
 

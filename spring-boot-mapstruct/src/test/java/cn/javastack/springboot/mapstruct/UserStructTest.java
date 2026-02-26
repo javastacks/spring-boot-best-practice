@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * 微信公众号：Java技术栈
  *
- * @author 栈长
+ * @author R哥
  */
 public class UserStructTest {
 
@@ -26,7 +26,7 @@ public class UserStructTest {
         userExtDO.setSchool("社会大学");
 
         UserDO userDO = new UserDO();
-        userDO.setName("栈长");
+        userDO.setName("R哥");
         userDO.setSex(1);
         userDO.setAge(18);
         userDO.setBirthday(new Date());
@@ -43,7 +43,7 @@ public class UserStructTest {
         List<UserDO> userDOs = new ArrayList<>();
         UserDO userDO2 = new UserDO();
         BeanUtils.copyProperties(userDO, userDO2);
-        userDO2.setName("栈长2");
+        userDO2.setName("R哥2");
         userDOs.add(userDO);
         userDOs.add(userDO2);
         List<UserShowDTO> userShowDTOs = UserStruct.INSTANCE.toUserShowDTOs(userDOs);

@@ -13,7 +13,7 @@ import java.util.Date;
 /**
  * 微信公众号：Java技术栈
  *
- * @author 栈长
+ * @author R哥
  */
 @SpringBootTest
 public class UserCustomStructTest {
@@ -30,7 +30,7 @@ public class UserCustomStructTest {
         userExtDO.setKids(1);
 
         UserDO userDO = new UserDO();
-        userDO.setName("栈长自定义方法");
+        userDO.setName("R哥自定义方法");
         userDO.setSex(1);
         userDO.setAge(18);
         userDO.setBirthday(new Date());

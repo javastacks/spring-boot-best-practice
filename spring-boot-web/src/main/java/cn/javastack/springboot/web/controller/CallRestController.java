@@ -24,12 +24,12 @@ public class CallRestController {
     private final RestClient restClient;
 
     @GetMapping("/restTemplate/{uid}")
-    public User restTemplate(@PathVariable("uid") String uid) {
+    public User restTemplate(@PathVariable String uid) {
         return this.restTemplate.getForObject(GET_USERINFO_URL, User.class, uid);
     }
 
     @GetMapping("/restClient/{uid}")
-    public User restClient(@PathVariable("uid") String uid) {
+    public User restClient(@PathVariable String uid) {
         return this.restClient
                 .get()
                 .uri("/user/json/{uid}", uid)

@@ -9,13 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot-undertow</artifactId>
+    <artifactId>spring-boot-jetty</artifactId>
 
     <dependencies>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
             <exclusions>
                 <!-- Exclude the Tomcat dependency -->
                 <exclusion>
@@ -25,10 +25,10 @@
             </exclusions>
         </dependency>
 
-        <!-- Use Undertow instead -->
+        <!-- Spring Boot 4 推荐使用 Jetty 保持“替换默认容器”示例能力 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-undertow</artifactId>
+            <artifactId>spring-boot-starter-jetty</artifactId>
         </dependency>
 
     </dependencies>

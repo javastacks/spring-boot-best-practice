@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * 微信公众号：Java技术栈
- * @author 栈长
+ * @author R哥
  */
 @Mapper
 public interface UserStruct {

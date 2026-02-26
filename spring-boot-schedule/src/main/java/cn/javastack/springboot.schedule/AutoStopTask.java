@@ -9,6 +9,8 @@ import org.springframework.scheduling.support.ScheduledMethodRunnable;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ReflectionUtils;
 
+import java.util.concurrent.ScheduledFuture;
+
 /**
  * 按条件自动停止任务
  * 公众号：Java技术栈
@@ -31,7 +33,12 @@ public class AutoStopTask {
         // 执行3次后自动停止
         if (count >= 3) {
             log.info("任务已执行指定次数，现在自动停止");
-            boolean cancelled = customTaskScheduler.getScheduledTasks().get(this).cancel(true);
+            ScheduledFuture<?> scheduledFuture = customTaskScheduler.getScheduledTasks().get(this);
+            if (scheduledFuture == null) {
+                log.warn("未找到当前任务对应的 ScheduledFuture，取消任务跳过。");
+                return;
+            }
+            boolean cancelled = scheduledFuture.cancel(true);
             if (cancelled) {
                 count = 0;
                 ScheduledMethodRunnable runnable = new ScheduledMethodRunnable(this, ReflectionUtils.findMethod(this.getClass(), "printTask"));

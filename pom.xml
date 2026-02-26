@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.0</version>
+        <version>4.0.3</version>
     </parent>
 
     <groupId>cn.javastack</groupId>
@@ -31,7 +31,7 @@
         <module>spring-boot-mongodb</module>
         <module>spring-boot-elasticsearch</module>
         <module>spring-boot-session</module>
-        <module>spring-boot-undertow</module>
+        <module>spring-boot-jetty</module>
         <module>spring-boot-docker</module>
         <module>spring-boot-features</module>
         <module>spring-boot-application</module>
@@ -56,7 +56,6 @@
         <module>spring-boot-war</module>
 		<module>spring-boot-actuator</module>
         <module>spring-boot-aop</module>
-        <module>spring-boot-ai</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -79,7 +78,7 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
         </dependency>
 
         <dependency>
@@ -100,18 +99,6 @@
         </dependency>
 
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.ai</groupId>
-                <artifactId>spring-ai-bom</artifactId>
-                <version>1.0.0</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 <!--    <repositories>-->
 <!--        <repository>-->

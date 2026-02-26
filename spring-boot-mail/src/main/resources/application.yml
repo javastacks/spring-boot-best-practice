@@ -13,6 +13,6 @@ spring:
 
 mail:
   from: xxx@xxx.com
-  personal: 栈长
+  personal: R哥
   bcc: xxx@xxx.com
   subject: Spring Boot 发邮件测试主题

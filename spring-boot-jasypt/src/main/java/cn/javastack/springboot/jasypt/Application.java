@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 
 /**
  * 来源微信公众号：Java技术栈
- * 作者：栈长
+ * 作者：R哥
  */
 @Slf4j
 @SpringBootApplication
@@ -23,7 +23,7 @@ public class Application {
 
     /**
      * 来源微信公众号：Java技术栈
-     * 作者：栈长
+     * 作者：R哥
      */
     public static void main(String[] args) {
         SpringApplication.run(Application.class);
@@ -31,7 +31,7 @@ public class Application {
 
     /**
      * 来源微信公众号：Java技术栈
-     * 作者：栈长
+     * 作者：R哥
      */
     @Bean
     public CommandLineRunner commandLineRunner() {

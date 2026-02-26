@@ -13,7 +13,7 @@ import java.util.Date;
 /**
  * 微信公众号：Java技术栈
  *
- * @author 栈长
+ * @author R哥
  */
 @SpringBootTest
 public class UserExistStructTest {
@@ -29,7 +29,7 @@ public class UserExistStructTest {
         userExtDO.setSchool("社会大学");
 
         UserDO userDO = new UserDO();
-        userDO.setName("栈长");
+        userDO.setName("R哥");
         userDO.setSex(1);
         userDO.setAge(18);
         userDO.setBirthday(new Date());
@@ -41,8 +41,8 @@ public class UserExistStructTest {
 
         System.out.println("=====映射现有实例前=====");
         UserShowDTO userShowDTO = new UserShowDTO();
-        userShowDTO.setName("栈长NAME");
-        userShowDTO.setMemo("栈长MEMO");
+        userShowDTO.setName("R哥NAME");
+        userShowDTO.setMemo("R哥MEMO");
         System.out.println(userShowDTO);
 
         System.out.println("=====映射现有实例后=====");

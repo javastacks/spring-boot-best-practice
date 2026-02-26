@@ -4,7 +4,7 @@ import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 
 /**
- * 观察目标：栈长
+ * 观察目标：R哥
  * 来源微信公众号：Java技术栈
  */
 @Getter

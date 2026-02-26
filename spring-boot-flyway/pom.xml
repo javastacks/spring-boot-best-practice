@@ -12,9 +12,6 @@
     <artifactId>spring-boot-flyway</artifactId>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <flyway-core.version>7.10.0</flyway-core.version>
     </properties>
 
     <dependencies>
@@ -27,9 +24,8 @@
             <artifactId>mysql-connector-j</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
-            <version>${flyway-core.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-flyway</artifactId>
         </dependency>
     </dependencies>
 
