@@ -5,7 +5,7 @@
 # =========================
 # 整包镜像（all-in-one）
 # =========================
-FROM eclipse-temurin:25-jre AS all-in-one
+FROM eclipse-temurin:21-jre AS all-in-one
 ARG JAR_FILE=target/*-exec.jar
 COPY ${JAR_FILE} /application.jar
 ENV SPRING_PROFILES_ACTIVE=docker-all
@@ -15,13 +15,13 @@ EXPOSE 8080
 # =========================
 # 分层镜像（layered）
 # =========================
-FROM eclipse-temurin:25-jre AS builder
+FROM eclipse-temurin:21-jre AS builder
 WORKDIR /builder
 ARG JAR_FILE=target/*-exec.jar
 COPY ${JAR_FILE} application.jar
 RUN java -Djarmode=tools -jar application.jar extract --layers --destination extracted
 
-FROM eclipse-temurin:25-jre AS layered
+FROM eclipse-temurin:21-jre AS layered
 WORKDIR /application
 COPY --from=builder /builder/extracted/dependencies/ ./
 COPY --from=builder /builder/extracted/spring-boot-loader/ ./
