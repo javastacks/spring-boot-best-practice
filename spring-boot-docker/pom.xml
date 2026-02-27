@@ -18,14 +18,19 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
                     <execution>
+                        <id>repackage</id>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                    <execution>
                         <goals>
                             <goal>build-image</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <!-- 分层镜像不兼容可直接执行的包 -->
-                    <executable>false</executable>
+                    <classifier>exec</classifier>
                     <image>
                         <name>javastack/docker-cnb:${project.version}</name>
                         <pullPolicy>IF_NOT_PRESENT</pullPolicy>

@@ -1,0 +1,32 @@
+services:
+  kafka:
+    # 使用 Kafka 4.x 官方镜像（KRaft 模式，无需 ZooKeeper）
+    image: apache/kafka:4.2.0
+    container_name: kafka
+    ports:
+      # Broker 对外服务端口（应用连接该端口）
+      - "9092:9092"
+      # Controller 通信端口（KRaft 内部使用）
+      - "9093:9093"
+    environment:
+      # 当前节点 ID（单节点固定为 1）
+      KAFKA_NODE_ID: 1
+      # 单节点同时承担 broker + controller 角色
+      KAFKA_PROCESS_ROLES: "broker,controller"
+      # 监听器与协议映射，示例中全部使用明文 PLAINTEXT
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT"
+      # 容器内绑定地址：9092 提供业务访问，9093 提供 controller 通信
+      KAFKA_LISTENERS: "PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093"
+      # KRaft 必填：声明 controller 使用的监听器名称
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      # KRaft 选举成员，格式为 <nodeId>@<host>:<port>
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@kafka:9093"
+      # broker 间通信使用的监听器
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      # 暴露给客户端的地址（本地开发用 localhost）
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://localhost:9092"
+      # 单节点场景下，内部主题副本数必须为 1
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      # 事务状态主题最小 ISR（单节点需设置为 1）
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1

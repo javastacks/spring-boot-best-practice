@@ -1,24 +1,32 @@
-# 分别放开以下注释，并修改 application.yml 中对应的端口
+# 用法：
+# 1) 整包镜像：docker build --target all-in-one -t javastack/docker-all:1.0 .
+# 2) 分层镜像：docker build --target layered -t javastack/docker-layer:1.0 .
 
-# 整包构建
-#FROM eclipse-temurin:17-jre
-#ARG JAR_FILE=target/*.jar
-#COPY ${JAR_FILE} application.jar
-#ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/application.jar"]
-#EXPOSE 8080
+# =========================
+# 整包镜像（all-in-one）
+# =========================
+FROM eclipse-temurin:25-jre AS all-in-one
+ARG JAR_FILE=target/*-exec.jar
+COPY ${JAR_FILE} /application.jar
+ENV SPRING_PROFILES_ACTIVE=docker-all
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/application.jar"]
+EXPOSE 8080
 
-# 分层构建
-#FROM eclipse-temurin:17-jre as builder
-#WORKDIR application
-#ARG JAR_FILE=target/*.jar
-#COPY ${JAR_FILE} application.jar
-#RUN java -Djarmode=layertools -jar application.jar extract
-#
-#FROM eclipse-temurin:17-jre
-#WORKDIR application
-#COPY --from=builder application/dependencies/ ./
-#COPY --from=builder application/spring-boot-loader/ ./
-#COPY --from=builder application/snapshot-dependencies/ ./
-#COPY --from=builder application/application/ ./
-#ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
-#EXPOSE 8081
+# =========================
+# 分层镜像（layered）
+# =========================
+FROM eclipse-temurin:25-jre AS builder
+WORKDIR /builder
+ARG JAR_FILE=target/*-exec.jar
+COPY ${JAR_FILE} application.jar
+RUN java -Djarmode=tools -jar application.jar extract --layers --destination extracted
+
+FROM eclipse-temurin:25-jre AS layered
+WORKDIR /application
+COPY --from=builder /builder/extracted/dependencies/ ./
+COPY --from=builder /builder/extracted/spring-boot-loader/ ./
+COPY --from=builder /builder/extracted/snapshot-dependencies/ ./
+COPY --from=builder /builder/extracted/application/ .//
+ENV SPRING_PROFILES_ACTIVE=docker-layered
+ENTRYPOINT ["java", "-jar", "application.jar"]
+EXPOSE 8081

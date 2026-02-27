@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
- * 观察目标：R哥
- * 来源微信公众号：Java技术栈
+ * 作者：R哥
+ * 微信公众号：Java技术栈
  */
 @EnableAsync
 @SpringBootApplication

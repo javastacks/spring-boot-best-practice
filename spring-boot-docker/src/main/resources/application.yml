@@ -1,2 +1,33 @@
+spring:
+  application:
+    name: spring-boot-docker
+
 server:
-  port: 8082 # 8080 for all, 8081 for layer, 8082 for Cloud Native Buildpacks
+  port: 8080
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker-all
+
+server:
+  port: 8080
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker-layered
+
+server:
+  port: 8081
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker-cnb
+
+server:
+  port: 8082

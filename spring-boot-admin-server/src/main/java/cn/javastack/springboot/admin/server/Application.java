@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 作者：R哥
- * 来源微信公众号：Java技术栈
+ * 微信公众号：Java技术栈
  */
 @EnableAdminServer
 @SpringBootApplication

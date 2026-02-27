@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 /**
  * 作者：R哥
- * 来源微信公众号：Java技术栈
+ * 微信公众号：Java技术栈
  */
 @Slf4j
 @EnableScheduling

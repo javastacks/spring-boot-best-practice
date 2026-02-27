@@ -14,7 +14,7 @@ public class UserController {
     private final UserRepository userRepository;
 
     @GetMapping("/user/info/{id}")
-    public UserDO getUserInfo(@PathVariable("id") long id){
+    public UserDO getUserInfo(@PathVariable long id){
         UserDO userDO = userRepository.findById(id).orElseGet(null);
         return userDO;
     }
