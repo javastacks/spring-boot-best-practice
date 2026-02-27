@@ -119,12 +119,9 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Bean
     public RestTemplate defaultRestTemplate() {
-        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
-        requestFactory.setConnectTimeout(Duration.ofSeconds(5));
-        requestFactory.setReadTimeout(Duration.ofSeconds(5));
-
-        RestTemplate restTemplate = new RestTemplate(requestFactory);
+        RestTemplate restTemplate = new RestTemplate();
         restTemplate.getInterceptors().add(new BasicAuthenticationInterceptor("test", "test"));
+        customRestTemplateCustomizer.customize(restTemplate);
         return restTemplate;
     }
 
