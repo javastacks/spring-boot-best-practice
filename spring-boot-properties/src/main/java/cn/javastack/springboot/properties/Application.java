@@ -20,7 +20,6 @@ import org.springframework.context.annotation.Bean;
  */
 @SpringBootApplication
 @RequiredArgsConstructor
-//@EnableConfigurationProperties(value = {JavastackProperties.class, MemberProperties.class})
 @ConfigurationPropertiesScan
 @Slf4j
 public class Application {
