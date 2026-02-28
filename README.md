@@ -1,12 +1,14 @@
 # spring-boot-best-practice
 
+中文 | [English](./README.en.md)
+
 > :rocket: 本仓库提供了 Spring Boot 主流知识点实战示例，大家可以随意下载学习。
 >
 > :star: 本项目会长期更新，为避免迷路，请点击右上角 **Star** 关注本项目。
 
 ## :fire: 为什么要学 Spring Boot？
 
-> 本仓库已适配 **Spring Boot 4.x**，当前基线版本为 **Spring Boot 4.0.3**，配套 **Spring Framework 7.x** 与 **Java 25**。
+> 本仓库已适配 **Spring Boot 4.x**，当前基线版本为 **Spring Boot 4.0.3**，配套 **Spring Framework 7.x** 与 **Java 21**。
 > 
 > 所有示例均围绕真实开发场景构建，既可作为 Spring Boot 学习仓库，也可作为 Spring Boot 4.x 升级与迁移参考。
 
