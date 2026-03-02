@@ -36,11 +36,7 @@ public class Application {
 
     @Bean
     @Transactional
-    public CommandLineRunner commandLineRunner() {
-        return useJdbcClient();
-    }
-
-    private CommandLineRunner useJdbcTemplate() {
+    public CommandLineRunner useJdbcTemplate() {
         return (args) -> {
             log.info("using JdbcTemplate...");
             BeanPropertyRowMapper<UserDO> rowMapper = new BeanPropertyRowMapper<>(UserDO.class);
@@ -57,7 +53,9 @@ public class Application {
         };
     }
 
-    private CommandLineRunner useJdbcClient() {
+    @Bean
+    @Transactional
+    public CommandLineRunner useJdbcClient() {
         return (args) -> {
             log.info("using JdbcClient...");
             UserDO userDO = jdbcClient.sql("select username from t_user where id = ?")
