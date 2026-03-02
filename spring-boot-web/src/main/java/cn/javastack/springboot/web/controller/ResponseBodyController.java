@@ -27,7 +27,7 @@ public class ResponseBodyController {
 
     @CrossOrigin
     @GetMapping(value = "/user/json/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public User getJsonUserInfo(@PathVariable("userId") @Size(min = 5, max = 8) String userId) {
+    public User getJsonUserInfo(@PathVariable @Size(min = 5, max = 8) String userId) {
         User user = new User("Java技术栈", 18);
         user.setId(Long.valueOf(userId));
         log.info("user info: {}", user);
@@ -35,7 +35,7 @@ public class ResponseBodyController {
     }
 
     @GetMapping(value = "/user/xml/{userId}", produces = MediaType.APPLICATION_XML_VALUE)
-    public UserXml getXmlUserInfo(@PathVariable("userId") String userId) {
+    public UserXml getXmlUserInfo(@PathVariable String userId) {
         UserXml user = new UserXml();
         user.setName("R哥");
         user.setId(userId);

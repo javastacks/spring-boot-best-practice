@@ -6,13 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * 微信公众号：Java技术栈
  */
 @Data
-@NoArgsConstructor
 public class User {
 
     public User(String userName, Integer age) {

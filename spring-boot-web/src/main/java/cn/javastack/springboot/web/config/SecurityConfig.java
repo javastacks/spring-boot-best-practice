@@ -14,13 +14,14 @@ import static org.springframework.security.config.Customizer.withDefaults;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) {
         return http.authorizeHttpRequests((authorize) -> {
                     authorize.requestMatchers("/test/**").hasRole("TEST")
                             .requestMatchers("/**").permitAll();
                 })
                 .logout((logout) -> logout.logoutSuccessUrl("/"))
                 .formLogin(withDefaults())
+                .csrf(csrf -> csrf.disable())
                 .build();
     }
 

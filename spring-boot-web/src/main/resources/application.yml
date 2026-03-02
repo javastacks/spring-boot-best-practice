@@ -1,7 +1,20 @@
 server:
   port: 8443
+  # 默认为 graceful
+  shutdown: graceful
   servlet:
     context-path: /
+    session:
+      # 开启持久化（默认 false）
+      persistent: true
+      # 持久化目录
+      store-dir: /tmp/session-store
+      # 追踪模式
+      tracking-modes:
+        - cookie
+        - url
+      # 超时时间（默认 30 分钟）
+      timeout: 60m
   ssl:
     protocol: TLS
     key-store-type: JKS
@@ -9,6 +22,8 @@ server:
     key-store-password: javastack
 
 spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
   messages:
     basename: i18n/common, i18n/index
     fallback-to-system-locale: false

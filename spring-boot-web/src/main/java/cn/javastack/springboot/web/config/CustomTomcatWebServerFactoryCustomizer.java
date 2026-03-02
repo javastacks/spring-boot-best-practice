@@ -2,6 +2,7 @@ package cn.javastack.springboot.web.config;
 
 import org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 
@@ -10,7 +11,8 @@ import java.time.Duration;
  * 微信公众号：Java技术栈
  */
 //@Component
-public class CustomTomcatWebServerFactoryCustomizer implements WebServerFactoryCustomizer<TomcatServletWebServerFactory> {
+public class CustomTomcatWebServerFactoryCustomizer
+        implements WebServerFactoryCustomizer<TomcatServletWebServerFactory> {
 
     @Override
     public void customize(TomcatServletWebServerFactory server) {
