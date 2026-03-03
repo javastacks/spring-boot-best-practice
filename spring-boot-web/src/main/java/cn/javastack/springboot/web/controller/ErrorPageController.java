@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.webmvc.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 微信公众号：Java技术栈
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ErrorPageController implements ErrorController {
 
-    @GetMapping(value = "/error")
+    @RequestMapping(value = "/error")
     public String handleError() {
         return "redirect:/";
     }

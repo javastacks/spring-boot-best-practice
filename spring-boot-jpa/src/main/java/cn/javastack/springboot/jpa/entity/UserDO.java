@@ -7,7 +7,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Data
-@Entity(name = "t_user")
+@Entity
+@Table(name = "t_user")
 public class UserDO implements Serializable {
 
     @Id
