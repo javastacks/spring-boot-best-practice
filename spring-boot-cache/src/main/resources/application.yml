@@ -4,3 +4,9 @@ spring:
     cache-names: "calc,test"
     redis:
       time-to-live: "10s"
+  data:
+    redis:
+      host: localhost
+      password: 123456
+      port: 6379
+      database: 0
