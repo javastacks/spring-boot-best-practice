@@ -34,7 +34,12 @@ spring:
   mvc:
     static-path-pattern: "/**" # 默认 /**
 #  可添加到全局配置文件中
-#  devtools:
-#    restart:
-#      log-condition-evaluation-delta: false
-#      trigger-file: ".reloadtrigger"
+  devtools:
+    restart:
+      # 默认为 true
+      enabled: true
+      #      log-condition-evaluation-delta: false
+      #      trigger-file: ".reloadtrigger"
+    livereload:
+      # 默认为 false
+      enabled: true

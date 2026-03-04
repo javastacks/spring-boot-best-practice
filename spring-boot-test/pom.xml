@@ -19,5 +19,20 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- 启用调试参数 -->
+<!--                    <jvmArguments>-->
+<!--                        -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005-->
+<!--                    </jvmArguments>-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>
