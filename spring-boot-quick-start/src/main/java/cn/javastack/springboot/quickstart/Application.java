@@ -1,4 +1,4 @@
-package cn.javastack.springboot.quckstart;
+package cn.javastack.springboot.quickstart;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
