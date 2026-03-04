@@ -29,6 +29,7 @@ This repository uses a Maven multi-module structure and covers core Spring Boot 
 | `spring-boot-quick-start` | Quick start and basic bootstrapping example for Spring Boot. |
 | `spring-boot-mail` | Email sending example with Spring Boot. |
 | `spring-boot-web` | Spring MVC web examples, including message conversion, interceptors, and servlet registration. |
+| `spring-boot-rest-services` | REST service call examples including RestTemplate, RestClient, WebClient, and more. |
 | `spring-boot-webflux` | Reactive development examples with Spring WebFlux and `WebClient`. |
 | `spring-boot-logging` | Logging system and logging configuration examples in Spring Boot. |
 | `spring-boot-test` | Spring Boot testing examples, including `MockMvc`, `MockBean`, and JSON tests. |

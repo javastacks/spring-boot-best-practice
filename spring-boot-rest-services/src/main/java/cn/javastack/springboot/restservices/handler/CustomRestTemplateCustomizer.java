@@ -1,4 +1,4 @@
-package cn.javastack.springboot.web.handler;
+package cn.javastack.springboot.restservices.handler;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.hc.client5.http.classic.HttpClient;

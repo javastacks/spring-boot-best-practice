@@ -1,6 +1,6 @@
-package cn.javastack.springboot.web.controller;
+package cn.javastack.springboot.restservices.controller;
 
-import cn.javastack.springboot.web.bean.User;
+import cn.javastack.springboot.restservices.bean.User;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 /**
  * Rest 服务调用接口
@@ -23,6 +25,8 @@ public class CallRestController {
 
     private final RestClient restClient;
 
+    private final WebClient webClient;
+
     @GetMapping("/restTemplate/{uid}")
     public User restTemplate(@PathVariable String uid) {
         return this.restTemplate.getForObject(GET_USERINFO_URL, User.class, uid);
@@ -35,6 +39,12 @@ public class CallRestController {
                 .uri("/user/json/{uid}", uid)
                 .retrieve()
                 .body(User.class);
+    }
+
+    @GetMapping("/webClient/{uid}")
+    public Mono<User> webClient(@PathVariable String uid) {
+        return this.webClient.get().uri(GET_USERINFO_URL, uid)
+                .retrieve().bodyToMono(User.class);
     }
 
 }

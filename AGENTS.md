@@ -27,6 +27,7 @@
 - `spring-boot-quick-start`：快速入门
 - `spring-boot-application`：启动与应用级能力
 - `spring-boot-web`：Spring MVC、消息转换、拦截器、Servlet/Filter 注册
+- `spring-boot-rest-services`：REST 服务调用（RestTemplate、RestClient、WebClient 等）
 - `spring-boot-webflux`：WebFlux、`WebClient`
 - `spring-boot-properties`：配置绑定、Profile、配置导入
 - `spring-boot-logging`：日志体系

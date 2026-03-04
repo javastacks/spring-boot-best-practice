@@ -46,7 +46,6 @@ public class GlobalExceptionHandler {
         return new ResponseEntity(msg, HttpStatus.OK);
     }
 
-
     /**
      * 处理参数校验异常（在方法参数上直接使用了 @Size 等约束）
      * @param ex

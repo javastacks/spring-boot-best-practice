@@ -1,10 +1,8 @@
-package cn.javastack.springboot.web.bean;
+package cn.javastack.springboot.restservices.bean;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 /**
@@ -20,12 +18,9 @@ public class User {
 
     private Long id;
 
-    @NotNull
     @JsonProperty(value = "username", required = true)
-    @Size(min = 5, max = 10)
     private String userName;
 
-    @NotNull
     private Integer age;
 
     @JsonIgnore

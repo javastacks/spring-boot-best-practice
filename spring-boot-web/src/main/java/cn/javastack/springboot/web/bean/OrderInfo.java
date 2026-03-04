@@ -1,6 +1,5 @@
 package cn.javastack.springboot.web.bean;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
