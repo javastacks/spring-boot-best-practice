@@ -13,14 +13,20 @@ management:
 #  server:
 #    port: 8088
 #    address: 127.0.0.1
+  metrics:
+    tags:
+      application: ${spring.application.name}
   endpoints:
+    access:
+#      max-permitted: none # 访问限制（优先级最高，include 也会被忽略）
+      default: none # 访问权限，默认不允许访问任何端点
     jmx:
       exposure:
         include: health,info
     web:
       discovery:
-        enabled: true
-      base-path: /actuator
+        enabled: true # 默认：true
+      base-path: /actuator # 默认：/actuator
       path-mapping:
         health: health
       exposure:
@@ -29,6 +35,19 @@ management:
       cors:
         allowed-origins: "*"
         allowed-methods: "GET,POST"
+  endpoint:
+    health:
+      access: read_only
+    metrics:
+      access: read_only
+    prometheus:
+      access: read_only
+    shutdown:
+      access: unrestricted
+    loggers:
+      access: unrestricted
+    test:
+      access: unrestricted
   observations:
     key-values:
       application: ${spring.application.name}

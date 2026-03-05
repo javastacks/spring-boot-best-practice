@@ -1,8 +1,8 @@
 spring:
   mail:
-    host: smtp.exmail.qq.com
-    username: xxx@xxx.com
-    password: xxx
+    host: ${SPRING_MAIL_HOST:smtp.exmail.qq.com}
+    username: ${SPRING_MAIL_USERNAME}
+    password: ${SPRING_MAIL_PASSWORD}
     properties:
       "[mail.smtp.socketFactory.class]": javax.net.ssl.SSLSocketFactory
       "[mail.smtp.socketFactory.fallback]": false
@@ -12,7 +12,7 @@ spring:
       "[mail.smtp.writetimeout]": 5000
 
 mail:
-  from: xxx@xxx.com
+  from: ${SPRING_MAIL_USERNAME}
   personal: R哥
-  bcc: xxx@xxx.com
+  bcc: ${SPRING_MAIL_BCC:}
   subject: Spring Boot 发邮件测试主题

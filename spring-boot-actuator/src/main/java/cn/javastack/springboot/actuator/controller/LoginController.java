@@ -1,4 +1,4 @@
-package cn.javastack.springboot.actuator;
+package cn.javastack.springboot.actuator.controller;
 
 import cn.javastack.springboot.actuator.observation.IndexObservation;
 import lombok.RequiredArgsConstructor;

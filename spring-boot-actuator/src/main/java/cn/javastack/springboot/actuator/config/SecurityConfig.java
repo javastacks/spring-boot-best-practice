@@ -1,4 +1,4 @@
-package cn.javastack.springboot.actuator;
+package cn.javastack.springboot.actuator.config;
 
 import org.springframework.boot.security.autoconfigure.actuate.web.servlet.EndpointRequest;
 import org.springframework.context.annotation.Bean;
@@ -20,7 +20,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.authorizeHttpRequests((authorize) -> {
-                    authorize.requestMatchers("/").permitAll()
+                    authorize.requestMatchers("/", "/error").permitAll()
                             .requestMatchers(EndpointRequest.to("health")).hasRole("ENDPOINT_ADMIN")
                             .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll();
                 })

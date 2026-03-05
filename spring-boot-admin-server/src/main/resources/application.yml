@@ -3,9 +3,9 @@ server:
 
 spring:
   mail:
-    host: smtp.exmail.qq.com
-    username: xxx@xxx.com
-    password: xxx
+    host: ${SPRING_MAIL_HOST:smtp.exmail.qq.com}
+    username: ${SPRING_MAIL_USERNAME}
+    password: ${SPRING_MAIL_PASSWORD}
     properties:
       "[mail.smtp.socketFactory.class]": javax.net.ssl.SSLSocketFactory
       "[mail.smtp.socketFactory.fallback]": false
@@ -17,12 +17,12 @@ spring:
     admin:
       notify:
         mail:
-          enabled: true
-          from: Spring Boot Admin <xxx@xxx.com>
-          to: xxx@xxx.com # 多个以,分隔
-          cc: xxx@xxx.com # 多个以,分隔
+          enabled: false
+          from: Spring Boot Admin <${SPRING_MAIL_USERNAME}>
+          to: ${SPRING_BOOT_ADMIN_NOTIFY_TO_EMAIL} # 多个以,分隔
+          cc: ${SPRING_BOOT_ADMIN_NOTIFY_CC_EMAIL} # 多个以,分隔
         dingtalk:
           enabled: true
-          webhook-url: https://oapi.dingtalk.com/robot/send?access_token=xxx
-          secret: xxx
-          message: "警报：应用 #{instance.registration.name} - #{instance.id} 掉线了！！！"
+          webhook-url: ${DING_TALK_WEBHOOK_URL} # 必填，钉钉机器人Webhook地址
+          secret: ${DING_TALK_SECRET:} # 可选，安全设置加签秘钥
+          message: "应用警报：应用 #{name} - #{id} 掉线了！！！"

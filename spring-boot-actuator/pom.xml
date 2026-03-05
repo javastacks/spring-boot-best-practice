@@ -12,11 +12,19 @@
     <artifactId>spring-boot-actuator</artifactId>
 
     <dependencies>
+        <!-- 添加 Spring Boot Actuator 依赖，以启用监控和管理功能 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+        <!-- 添加 Micrometer Tracing 依赖，以启用分布式跟踪功能 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-micrometer-tracing-opentelemetry</artifactId>
+        </dependency>
+
+        <!-- 添加 Spring Security 依赖，以启用 Actuator 端点的安全保护 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -28,15 +36,28 @@
             <artifactId>micrometer-tracing-bridge-otel</artifactId>
         </dependency>
 
+        <!-- 添加 Spring Boot Zipkin 依赖，以启用分布式跟踪数据的收集和报告 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-zipkin</artifactId>
+        </dependency>
+
         <!-- 向 Zipkin 报告调用连跟踪信息 -->
         <dependency>
             <groupId>io.opentelemetry</groupId>
             <artifactId>opentelemetry-exporter-zipkin</artifactId>
         </dependency>
 
+        <!-- 添加 Micrometer Prometheus 依赖，以启用 Prometheus 监控数据的收集和报告 -->
         <dependency>
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+
+        <!-- 添加 Prometheus Pushgateway 依赖，以启用将监控数据推送到 Prometheus Pushgateway 的功能 -->
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>prometheus-metrics-exporter-pushgateway</artifactId>
         </dependency>
 
     </dependencies>

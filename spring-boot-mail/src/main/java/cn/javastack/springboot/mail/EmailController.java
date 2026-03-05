@@ -4,6 +4,7 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -52,7 +53,9 @@ public class EmailController {
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(msg, true);
         mimeMessageHelper.setFrom(mailProperties.getFrom(), mailProperties.getPersonal());
         mimeMessageHelper.setTo(email);
-        mimeMessageHelper.setBcc(mailProperties.getBcc());
+        if (StringUtils.isNotBlank(mailProperties.getBcc())) {
+            mimeMessageHelper.setBcc(mailProperties.getBcc());
+        }
         mimeMessageHelper.setSubject(mailProperties.getSubject());
         mimeMessageHelper.setText(text);
         mimeMessageHelper.addAttachment("附件",
