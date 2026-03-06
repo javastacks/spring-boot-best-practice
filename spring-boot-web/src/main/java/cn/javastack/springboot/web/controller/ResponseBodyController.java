@@ -58,7 +58,7 @@ public class ResponseBodyController {
         return new ResponseEntity(user, HttpStatus.OK);
     }
 
-    @GetMapping("/")
+    @GetMapping("/rest/index")
     public String index() {
         return "index page.";
     }
