@@ -8,11 +8,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
-import org.springframework.http.client.support.BasicAuthenticationInterceptor;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
+import org.springframework.http.client.support.BasicAuthenticationInterceptor;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.servlet.config.annotation.ApiVersionConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import reactor.netty.http.client.HttpClient;
 
@@ -56,6 +57,19 @@ public class WebConfig implements WebMvcConfigurer {
                 );
         ReactorClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);
         return webClientBuilder.clientConnector(connector).build();
+    }
+
+    /**
+     * API 版本控制（在配置文件中配置即可，不需要重复配置）
+     * @param configurer
+     */
+    @Override
+    public void configureApiVersioning(ApiVersionConfigurer configurer) {
+        configurer.setDefaultVersion("1.0");
+        configurer.useRequestHeader("X-Version");
+        configurer.useQueryParam("version");
+        configurer.usePathSegment(2);
+        configurer.addSupportedVersions("1.3", "1.4");
     }
 
 }
