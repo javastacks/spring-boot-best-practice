@@ -1,4 +1,4 @@
-package cn.javastack.springboot.webflux.handler;
+package cn.javastack.springboot.webflux.service.handler;
 
 import cn.javastack.springboot.webflux.bean.User;
 import org.springframework.http.MediaType;

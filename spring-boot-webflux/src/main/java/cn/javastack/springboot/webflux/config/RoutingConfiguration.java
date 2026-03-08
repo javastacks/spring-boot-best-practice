@@ -1,6 +1,6 @@
 package cn.javastack.springboot.webflux.config;
 
-import cn.javastack.springboot.webflux.handler.UserHandler;
+import cn.javastack.springboot.webflux.service.handler.UserHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
