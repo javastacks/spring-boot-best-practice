@@ -1,6 +1,8 @@
 package cn.javastack.springboot.restservices.controller;
 
+import cn.javastack.springboot.restservices.bean.Account;
 import cn.javastack.springboot.restservices.bean.User;
+import cn.javastack.springboot.restservices.service.AccountService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +29,8 @@ public class CallRestController {
 
     private final WebClient webClient;
 
+    private final AccountService accountService;
+
     @GetMapping("/restTemplate/{uid}")
     public User restTemplate(@PathVariable String uid) {
         return this.restTemplate.getForObject(GET_USERINFO_URL, User.class, uid);
@@ -45,6 +49,11 @@ public class CallRestController {
     public Mono<User> webClient(@PathVariable String uid) {
         return this.webClient.get().uri(GET_USERINFO_URL, uid)
                 .retrieve().bodyToMono(User.class);
+    }
+
+    @GetMapping("/getAccount/{uid}")
+    public Account httpClient(@PathVariable Long uid) {
+        return this.accountService.getAccount(uid);
     }
 
 }

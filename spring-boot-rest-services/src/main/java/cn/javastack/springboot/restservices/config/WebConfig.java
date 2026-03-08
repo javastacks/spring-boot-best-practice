@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.http.client.support.BasicAuthenticationInterceptor;
+import org.springframework.web.client.ApiVersionInserter;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
-import org.springframework.web.servlet.config.annotation.ApiVersionConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import reactor.netty.http.client.HttpClient;
 
@@ -41,6 +41,8 @@ public class WebConfig implements WebMvcConfigurer {
         return restClientBuilder
                 .baseUrl("http://localhost:8080")
                 .defaultHeader("Authorization", "Bearer test")
+                .apiVersionInserter(ApiVersionInserter.useHeader("X-Version"))
+                .defaultApiVersion("1.5")
                 .requestFactory(requestFactory)
                 .build();
     }
@@ -63,13 +65,13 @@ public class WebConfig implements WebMvcConfigurer {
      * API 版本控制（在配置文件中配置即可，不需要重复配置）
      * @param configurer
      */
-    @Override
-    public void configureApiVersioning(ApiVersionConfigurer configurer) {
-        configurer.setDefaultVersion("1.0");
-        configurer.useRequestHeader("X-Version");
-        configurer.useQueryParam("version");
-        configurer.usePathSegment(2);
-        configurer.addSupportedVersions("1.3", "1.4");
-    }
+//    @Override
+//    public void configureApiVersioning(ApiVersionConfigurer configurer) {
+//        configurer.setDefaultVersion("1.0");
+//        configurer.useRequestHeader("X-Version");
+//        configurer.useQueryParam("version");
+//        configurer.usePathSegment(2);
+//        configurer.addSupportedVersions("1.3", "1.4");
+//    }
 
 }

@@ -8,3 +8,12 @@ spring:
 #        pathSegment: 2
       required: false
       supported: 1.3, 1.4
+  http:
+    serviceclient:
+      account:
+        base-url: http://localhost:8080
+        read-timeout: 3s
+        apiversion:
+          default: 1.3
+          insert:
+            header: X-Version
