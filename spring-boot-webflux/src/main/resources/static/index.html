@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot WebFlux</title>
+    <style>
+        :root {
+            --bg-top: #f4f7ff;
+            --bg-bottom: #eaf0ff;
+            --ink-primary: #0f172a;
+            --ink-secondary: #4b5565;
+            --card-bg: rgba(255, 255, 255, 0.74);
+            --card-border: rgba(15, 23, 42, 0.12);
+            --accent: #0b63f6;
+            --accent-strong: #0a4fd0;
+            --shadow: 0 22px 50px rgba(15, 23, 42, 0.14);
+            --radius-lg: 28px;
+            --radius-md: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 24px;
+            font-family: "Avenir Next", "SF Pro Text", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+            color: var(--ink-primary);
+            background:
+                    radial-gradient(1200px 500px at 8% -15%, rgba(255, 255, 255, 0.95), transparent 70%),
+                    linear-gradient(145deg, var(--bg-top), var(--bg-bottom));
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ambient {
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            filter: blur(12px);
+            opacity: 0.48;
+            z-index: 0;
+            pointer-events: none;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .ambient.a {
+            left: -120px;
+            top: -110px;
+            background: radial-gradient(circle at 35% 35%, #bcd4ff, #dce9ff 62%);
+        }
+
+        .ambient.b {
+            right: -140px;
+            bottom: -150px;
+            background: radial-gradient(circle at 40% 40%, #c8dbff, #e7f0ff 65%);
+            animation-delay: -3s;
+        }
+
+        .welcome {
+            position: relative;
+            z-index: 1;
+            width: min(960px, 100%);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 22px;
+            padding: 34px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            animation: rise 600ms ease-out;
+        }
+
+        .hero h1 {
+            margin: 0 0 14px;
+            font-size: clamp(30px, 5vw, 46px);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--accent-strong);
+            background: rgba(11, 99, 246, 0.1);
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            margin: 0;
+            color: var(--ink-secondary);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .actions {
+            margin-top: 26px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 11px 16px;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            font-weight: 600;
+            font-size: 14px;
+            transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+        }
+
+        .btn.primary {
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+            box-shadow: 0 10px 24px rgba(11, 99, 246, 0.32);
+        }
+
+        .btn.primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 28px rgba(11, 99, 246, 0.36);
+        }
+
+        .btn.ghost {
+            color: var(--ink-primary);
+            border-color: rgba(15, 23, 42, 0.14);
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .btn.ghost:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, 0.92);
+        }
+
+        .panel {
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(15, 23, 42, 0.1);
+            background: rgba(255, 255, 255, 0.58);
+            padding: 18px 16px;
+        }
+
+        .panel h2 {
+            margin: 0 0 12px;
+            font-size: 16px;
+            letter-spacing: 0.01em;
+        }
+
+        .panel ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .panel li {
+            font-size: 14px;
+            color: var(--ink-secondary);
+            line-height: 1.5;
+            padding-left: 12px;
+            border-left: 2px solid rgba(11, 99, 246, 0.28);
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            50% {
+                transform: translate3d(0, -14px, 0);
+            }
+        }
+
+        @media (max-width: 860px) {
+            .welcome {
+                grid-template-columns: 1fr;
+                padding: 26px 22px;
+            }
+
+            .hero h1 {
+                font-size: clamp(28px, 10vw, 38px);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .welcome,
+            .ambient,
+            .btn {
+                animation: none;
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="ambient a"></div>
+<div class="ambient b"></div>
+<main class="welcome">
+    <section class="hero">
+        <span class="tag">Spring Boot WebFlux</span>
+        <h1>欢迎来到<br>spring-boot-webflux</h1>
+        <p>默认静态欢迎页已启用。页面风格保持简约与现代感，可直接作为示例项目首页。</p>
+    </section>
+</main>
+</body>
+</html>
