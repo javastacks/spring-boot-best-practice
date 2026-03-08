@@ -1,2 +1,8 @@
 server:
   port: 8080
+
+spring:
+  webflux:
+    static-path-pattern: /**
+    problemdetails:
+      enabled: true
