@@ -20,7 +20,7 @@
     <modules>
         <module>spring-boot-quick-start</module>
         <module>spring-boot-mail</module>
-        <module>spring-boot-web</module>
+        <module>spring-boot-webmvc</module>
         <module>spring-boot-rest-services</module>
         <module>spring-boot-webflux</module>
         <module>spring-boot-logging</module>
