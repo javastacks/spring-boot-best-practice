@@ -1,18 +1,21 @@
-package cn.javastack.springboot.session;
+package cn.javastack.springboot.session.webmvc;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 /**
+ * 登录拦截器
  * 微信公众号：Java技术栈
  */
 @Component
 @RequiredArgsConstructor
+@ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
 public class LoginInterceptor implements HandlerInterceptor {
 
     @Override

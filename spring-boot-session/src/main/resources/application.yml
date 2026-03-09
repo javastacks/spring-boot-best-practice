@@ -6,3 +6,5 @@ spring:
       host: localhost
       port: 6379
       password: 123456
+  main:
+    web-application-type: reactive # servlet, reactive
