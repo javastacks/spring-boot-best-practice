@@ -1,5 +1,9 @@
 server:
   port: 8080
+  netty:
+    connection-timeout: 3s
+    max-keep-alive-requests: 100
+    idle-timeout: 30s
 
 spring:
   webflux:
