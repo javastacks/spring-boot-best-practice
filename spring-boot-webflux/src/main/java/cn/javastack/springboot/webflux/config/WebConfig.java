@@ -3,6 +3,7 @@ package cn.javastack.springboot.webflux.config;
 import cn.javastack.springboot.webflux.handler.CustomErrorWebExceptionHandler;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.web.WebProperties;
+import org.springframework.boot.security.autoconfigure.web.reactive.PathRequest;
 import org.springframework.boot.webflux.autoconfigure.error.DefaultErrorWebExceptionHandler;
 import org.springframework.boot.webflux.error.ErrorAttributes;
 import org.springframework.boot.webflux.error.ErrorWebExceptionHandler;
@@ -14,6 +15,12 @@ import org.springframework.context.i18n.SimpleLocaleContext;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.codec.ServerCodecConfigurer;
+import org.springframework.security.config.web.server.ServerHttpSecurity;
+import org.springframework.security.core.userdetails.MapReactiveUserDetailsService;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.security.web.server.authentication.logout.RedirectServerLogoutSuccessHandler;
 import org.springframework.util.StringUtils;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.reactive.CorsWebFilter;
@@ -25,7 +32,10 @@ import org.springframework.web.reactive.result.view.ViewResolver;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.i18n.LocaleContextResolver;
 
+import java.net.URI;
 import java.util.Locale;
+
+import static org.springframework.security.config.Customizer.withDefaults;
 
 /**
  * WebFlux 配置类
@@ -120,6 +130,46 @@ public class WebConfig implements WebFluxConfigurer {
 
         // 创建并返回 CORS 过滤器
         return new CorsWebFilter(source);
+    }
+
+    /**
+     * WebFlux Security 过滤链
+     */
+    @Bean
+    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
+        // 退出登录成功后重定向到首页
+        RedirectServerLogoutSuccessHandler redirectServerLogoutSuccessHandler = new RedirectServerLogoutSuccessHandler();
+        redirectServerLogoutSuccessHandler.setLogoutSuccessUrl(URI.create("/"));
+
+        // 安全配置
+        return http
+                .authorizeExchange(exchange -> exchange
+                        .matchers(PathRequest.toStaticResources().atCommonLocations()).permitAll() // 静态资源允许访问
+                        .pathMatchers("/test/request").permitAll() // /test/request 允许
+                        .pathMatchers("/test/**").hasRole("TEST") // /test/** 需要 TEST 角色
+                        .pathMatchers("/**").permitAll() // 其他请求全部允许
+                )
+                .formLogin(withDefaults()) // 表单登录
+                .logout(logout -> logout.logoutSuccessHandler(redirectServerLogoutSuccessHandler))
+                .build();
+    }
+
+    /**
+     * 用户信息服务
+     */
+    @Bean
+    public MapReactiveUserDetailsService userDetailsService() {
+        UserDetails test = User
+                .withUsername("test")
+                .password("{noop}test")
+                .roles("ADMIN", "TEST")
+                .build();
+        UserDetails root = User
+                .withUsername("root")
+                .password("{noop}root")
+                .roles("ADMIN")
+                .build();
+        return new MapReactiveUserDetailsService(test, root);
     }
 
 }

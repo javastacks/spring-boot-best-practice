@@ -13,3 +13,7 @@ spring:
   messages:
     basename: i18n/common, i18n/index
     fallback-to-system-locale: false
+  security:
+    user:
+      name: root
+      password: root
