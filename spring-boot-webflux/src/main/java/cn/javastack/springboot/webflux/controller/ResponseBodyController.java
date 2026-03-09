@@ -28,6 +28,7 @@ public class ResponseBodyController {
      * @param userId
      * @return
      */
+    @CrossOrigin(origins = "https://javastack.cn", maxAge = 3600)
     @GetMapping(value = "/users/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<User> getUserInfo(@PathVariable @Size(min = 5, max = 8) String userId) {
         User user = new User("Java技术栈", 18);
