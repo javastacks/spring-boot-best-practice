@@ -1,5 +1,6 @@
 package cn.javastack.springboot.webflux.controller;
 
+import cn.javastack.springboot.webflux.filter.TestWebFilter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatusCode;
@@ -40,6 +41,7 @@ public class TestController {
                              ServerHttpResponse response,
                              WebSession webSession) {
         log.info("request: {}", request.getPath());
+        log.info("request filter: {}", request.getHeaders().getFirst(TestWebFilter.FROM_FILTER));
         String requestId = request.getId();
         String sessionId = webSession.getId();
         response.setStatusCode(HttpStatusCode.valueOf(201));
