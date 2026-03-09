@@ -3,11 +3,10 @@ package cn.javastack.springboot.webflux.controller;
 import cn.javastack.springboot.webflux.bean.User;
 import jakarta.validation.constraints.Size;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomUtils;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -66,5 +65,10 @@ public class ResponseBodyController {
                 .delayElements(Duration.ofSeconds(1)); // 每隔1秒输出一个用户信息，模拟数据逐条产生
     }
 
+    @PostMapping(value = "/user/save")
+    public Mono<User> saveUser(@RequestBody @Validated User user) {
+        user.setId(RandomUtils.nextLong());
+        return Mono.just(user);
+    }
 
 }
