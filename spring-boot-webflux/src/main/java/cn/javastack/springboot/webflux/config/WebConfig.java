@@ -9,11 +9,18 @@ import org.springframework.boot.webflux.error.ErrorWebExceptionHandler;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.i18n.LocaleContext;
+import org.springframework.context.i18n.SimpleLocaleContext;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.codec.ServerCodecConfigurer;
+import org.springframework.util.StringUtils;
 import org.springframework.web.reactive.config.ResourceHandlerRegistry;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
 import org.springframework.web.reactive.result.view.ViewResolver;
+import org.springframework.web.server.ServerWebExchange;
+import org.springframework.web.server.i18n.LocaleContextResolver;
+
+import java.util.Locale;
 
 /**
  * WebFlux 配置类
@@ -48,6 +55,30 @@ public class WebConfig implements WebFluxConfigurer {
         exceptionHandler.setMessageWriters(serverCodecConfigurer.getWriters());
         exceptionHandler.setMessageReaders(serverCodecConfigurer.getReaders());
         return exceptionHandler;
+    }
+
+    /**
+     * 国际化解析器，从请求参数 lang 中获取语言信息，默认为 en-US
+     */
+    @Bean
+    public LocaleContextResolver localeContextResolver() {
+        return new LocaleContextResolver() {
+
+            @Override
+            public LocaleContext resolveLocaleContext(ServerWebExchange exchange) {
+                String lang = exchange.getRequest().getQueryParams().getFirst("lang");
+                if (StringUtils.hasText(lang)) {
+                    return new SimpleLocaleContext(Locale.forLanguageTag(lang.replace("_", "-")));
+                }
+                return new SimpleLocaleContext(Locale.US);
+            }
+
+            @Override
+            public void setLocaleContext(ServerWebExchange exchange, LocaleContext localeContext) {
+                throw new UnsupportedOperationException("Use the lang query parameter to change locale");
+            }
+
+        };
     }
 
 }
