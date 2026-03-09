@@ -35,6 +35,13 @@ public class TestController {
         return "test";
     }
 
+    /**
+     * 测试请求和响应
+     * @param request
+     * @param response
+     * @param webSession
+     * @return
+     */
     @GetMapping("/test/request")
     @ResponseBody
     public Mono<String> test(ServerHttpRequest request,
